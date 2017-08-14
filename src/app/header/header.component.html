@@ -1,0 +1,88 @@
+<header id="main_menu" class="header navbar-fixed-top">
+    <div class="main_menu_bg">
+        <div class="container">
+            <div class="row">
+                <div class="nave_menu">
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="/">
+                                    <img src="assets/images/concilia_without_text.png"/>
+                                </a>
+                            </div>
+
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+
+
+
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a href="#">Início</a></li>
+                                    <li class="dropdown">
+										<a href="#" class="dropbtn">Programa</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a href="#">O que é</a></li>
+											<li><a href="#">Parceiros</a></li>
+											<li><a href="#">Concelho executivo</a></li>
+											<li><a href="#">Ação civil pública</a></li>
+											<li><a href="#">Manual da identidade visual</a></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropbtn">Comunidades</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a href="#">Comunidades seladas</a></li>
+											<li *ngFor="let community of communitys">
+												<a href="{{community.url}}">
+													{{community.name}}
+												</a>
+											</li>
+											<li><a href="#">CMAR</a></li>
+										</ul>
+									</li>
+									<li class="dropdown">
+										<a href="#" class="dropbtn">Imóveis</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a href="#">Banco de imóveis</a></li>
+											<li><a href="#">Localização dos imóveis</a></li>
+											<li><a href="#">Características dos imóveis</a></li>
+											<li><a href="#">Destinação dos imóveis</a></li>
+											<li><a href="#">Acesso aos imóveis</a></li>
+										</ul>
+									</li>
+                                    <li class="dropdown">
+										<a href="#" class="dropbtn">Providências</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a href="#">Plano de providências</a></li>
+											<li><a href="#">Critérios e regras</a></li>
+										</ul>
+									</li>
+                                    <li><a href="#">Notícia</a></li>
+									<li class="dropdown">
+										<a href="#" class="dropbtn">Acervo</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a href="#">Fotos</a></li>
+											<li><a href="#">Videos</a></li>
+										</ul>
+									</li>
+                                    <li><a href="#">Contato</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</header> <!--End of header -->
