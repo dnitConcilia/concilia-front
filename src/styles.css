@@ -542,7 +542,7 @@ input::-ms-input-placeholder {
     z-index: 300;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    background-color:rgba(34, 61, 97, 0.64);
+    background-color:rgba(34, 61, 97, 1);
     -webkit-transition:all .3s;
     -moz-transition:all .3s;
     transition:all .3s;
@@ -1622,7 +1622,7 @@ button.btn-md:hover {
 	text-transform: uppercase;
 }
 .dropdown-content {
-	background-color: rgba(0,0,0,0.4);
+	background-color: rgba(34, 61, 97, 1);
     display: none;
     position: absolute;
     min-width: 220px;
@@ -1699,4 +1699,7 @@ footer ul li {
     border-right: 20px solid transparent;
     border-bottom: 20px solid #ff6c00;
     margin-left: 50%;
+}
+.overlay-min{
+	height: 400px;
 }
