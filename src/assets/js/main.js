@@ -184,7 +184,28 @@ jQuery(document).ready(function ($) {
 
 });
 
-
+jQuery(document).ready(function($) {
+	$("ul.ul-submenu li").on('click', 'a', function(event) {
+		if ($(document).width() <= 1000) {
+			if($('.navbar-collapse').attr('aria-expanded')){
+				$('.navbar-collapse').collapse('hide');
+			}else{
+				$('.navbar-collapse').collapse('show');
+			}
+		}else{
+			$("body").animate({ scrollTop: 0 }, "slow");
+		}
+	});
+	$("ul.navbar-nav li").on('click', 'a', function(event) {
+		if (!$(this).hasClass('dropbtn') && $(document).width() <= 1000) {
+			if($('.navbar-collapse').attr('aria-expanded')){
+				$('.navbar-collapse').collapse('hide');
+			}else{
+				$('.navbar-collapse').collapse('show');
+			}
+		}
+	});
+});
 
 $(document).on("scroll", function () {
 	if ($(document).scrollTop() > 120) {

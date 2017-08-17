@@ -1,0 +1,40 @@
+<!-- scripts -->
+<link rel="stylesheet" href="assets/css/storymap-beautify.css">
+<script type="text/javascript" src="assets/js/storymap.min.js"></script>
+<!-- end scripts -->
+<style>
+    .vco-menubar {
+        display: none;
+    }
+</style>
+
+<section class="section-about">
+    <div class="row">
+        <div class="col-sm-12">
+             <h1 class="title-header-section">Comunidades Seladas: etapa 2017</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+             <!-- STORY MAP -->
+                <div id="mapdiv" style="width: 100%; height: 600px;"></div>
+            <!-- END STORY MAP -->
+        </div>
+    </div>
+
+</section>
+<script>
+        // storymap_data can be an URL or a Javascript object
+        var storymap_data = "assets/js/storymap.json";
+
+        // certain settings must be passed within a separate options object
+        var storymap_options = {
+            map_type: "osm",
+            zoom: 15,
+        };
+
+        var storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
+        window.onresize = function(event) {
+            storymap.updateDisplay(); // this isn't automatic
+        }
+</script>

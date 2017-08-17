@@ -25,55 +25,31 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li routerLinkActive="active"><a [routerLink]="['/']">Início</a></li>
-                                    <li routerLinkActive="active" class="dropdown">
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/']">Início</a></li>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
 										<a href="#" class="dropbtn">Programa</a>
 										<ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a href="#">O que é</a></li>
-											<li><a href="#">Parceiros</a></li>
+											<li><a [routerLink]="['/parceiros']">Parceiros</a></li>
 											<li><a href="#">Concelho executivo</a></li>
 											<li><a href="#">Ação civil pública</a></li>
 											<li><a href="#">Manual da identidade visual</a></li>
 										</ul>
 									</li>
-									<li routerLinkActive="active" class="dropdown">
-										<a href="#" class="dropbtn">Comunidades</a>
-										<ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a href="#">Comunidades seladas</a></li>
-											<li *ngFor="let community of communitys">
-												<a href="{{community.url}}">
-													{{community.name}}
-												</a>
-											</li>
-											<li><a href="#">CMAR</a></li>
-										</ul>
-									</li>
-									<li routerLinkActive="active" class="dropdown">
-										<a href="#" class="dropbtn">Imóveis</a>
-										<ul class="dropdown-content ul-submenu" style="right: auto;">
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/comunidades']">Comunidades</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
+										<a [routerLink]="['/imoveis']">Imóveis</a>
+										<!-- <ul class="dropdown-content ul-submenu" style="right: auto;">
 											<li><a href="#">Banco de imóveis</a></li>
 											<li><a href="#">Localização dos imóveis</a></li>
 											<li><a href="#">Características dos imóveis</a></li>
 											<li><a href="#">Destinação dos imóveis</a></li>
 											<li><a href="#">Acesso aos imóveis</a></li>
-										</ul>
+										</ul> -->
 									</li>
-                                    <li routerLinkActive="active" class="dropdown">
-										<a href="#" class="dropbtn">Providências</a>
-										<ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a href="#">Plano de providências</a></li>
-											<li><a href="#">Critérios e regras</a></li>
-										</ul>
-									</li>
-                                    <li routerLinkActive="active"><a href="#">Notícia</a></li>
-									<li routerLinkActive="active" class="dropdown">
-										<a href="#" class="dropbtn">Acervo</a>
-										<ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a href="#">Fotos</a></li>
-											<li><a href="#">Videos</a></li>
-										</ul>
-									</li>
-                                    <li routerLinkActive="active"><a [routerLink]="['/contato']">Contato</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/providencias']">Providências</a></li>
+                                    <li><a [routerLink]="['/noticias']">Notícias</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/acervo']">Acervo</a></li>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/contato']">Contato</a></li>
                                 </ul>
                             </div>
 

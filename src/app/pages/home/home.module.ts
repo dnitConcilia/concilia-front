@@ -1,28 +1,36 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomePageComponent } from './home-page.component';
+import { HomeComponent } from './home.component';
 import { AboutComponent } from './about/about.component';
 import { CounterUpComponent } from './counter-up/counter-up.component';
 import { ComponentsModule } from '../../components/components.module';
 import { TimelineComponent } from './timeline/timeline.component';
+import { BannerHomeComponent } from './banner-home/banner-home.component';
+import { PartnersComponent } from './partners/partners.component';
+import { HighlightsNewsComponent } from './highlights-news/highlights-news.component';
+import { ButtonBlockComponent } from './button-block/button-block.component';
 
 @NgModule({
 	declarations: [
-		HomePageComponent,
+		HomeComponent,
 		AboutComponent,
 		CounterUpComponent,
 		TimelineComponent,
+		BannerHomeComponent,
+		PartnersComponent,
+		HighlightsNewsComponent,
+		ButtonBlockComponent
 	],
 	imports: [
 		CommonModule,
 		ComponentsModule
 	],
 	exports: [
-		// HomePageComponent
+		// HomeComponent
 		// AboutComponent,
 		// CounterUpComponent,
 		// SlideHomeComponent
 	]
 })
-export class HomePageModule { }
+export class HomeModule { }

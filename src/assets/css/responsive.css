@@ -14,7 +14,7 @@ Author URI: http://www.bootstrapthemes.co
     .service .nav-tabs>li>a{
         width:195px;
         font-size: 95%;
-    }   
+    }
     .service_tabe_menu.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
         width:195px;
     }
@@ -23,7 +23,7 @@ Author URI: http://www.bootstrapthemes.co
         margin-left: 50px;
     }
 
-    .team .single_team_content .single_team_text_overlay .team_overlay_socail a i { 
+    .team .single_team_content .single_team_text_overlay .team_overlay_socail a i {
         width: 22px;
         height: 22px;
         line-height: 22px;
@@ -62,7 +62,7 @@ Author URI: http://www.bootstrapthemes.co
     .service .nav-tabs>li>a{
         width:158px;
         font-size: 95%;
-    }   
+    }
     .service_tabe_menu.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
         width:158px;
     }
@@ -100,14 +100,15 @@ Author URI: http://www.bootstrapthemes.co
 
 }
 /* Landscape phones and portrait tablets */
-@media  (max-width: 768px) {
+@media  (max-width: 1000px) {
     html {
         font-size: 80%;
     }
     .navbar-default .navbar-collapse, .navbar-default .navbar-form {
         border-color: transparent;
-        background-color: rgba(67, 52, 108, 0.5);
+        background-color: rgba(34, 61, 97, 1);
         text-align: center;
+		/*min-height: 100%;*/
     }
     .main_menu_bg .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
         border-bottom: 0px solid;
@@ -140,7 +141,7 @@ Author URI: http://www.bootstrapthemes.co
     }
     .main_clinetslogo{
         margin-top:30px;
-    } 
+    }
     .single_counter{
         text-align: center;
         padding-bottom:30px;
@@ -184,7 +185,7 @@ Author URI: http://www.bootstrapthemes.co
     .copyright_text{
         text-align: center;
     }
-    .footer_socail{ 
+    .footer_socail{
         text-align: center;
     }
     .footer_subcribs_area .navbar-form {
@@ -219,7 +220,6 @@ Author URI: http://www.bootstrapthemes.co
         text-align: center;
     }
 
-
 }
 
 
@@ -239,12 +239,7 @@ Author URI: http://www.bootstrapthemes.co
 
 }
 
-
-
-
-
 @media (max-width: 320px) {
-
 
     html {
         font-size: 60.5%;
@@ -252,15 +247,4 @@ Author URI: http://www.bootstrapthemes.co
     .about_skill_area .about_tabe .about_tabe_menu li a {
         width: 60px;
     }
-
-
-
-
-
-
-
-
-
-
 }
-

@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { PreLoaderComponent } from './pre-loader/pre-loader.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { HomePageModule } from './pages/home-page/home-page.module';
+import { HomeModule } from './pages/home/home.module';
 
 import { ROUTES } from './app.routes';
 
@@ -23,7 +23,7 @@ import { ROUTES } from './app.routes';
 		BrowserModule,
 		HttpModule,
 		RouterModule.forRoot(ROUTES),
-		HomePageModule
+		HomeModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

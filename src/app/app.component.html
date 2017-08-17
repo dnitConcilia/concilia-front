@@ -1,6 +1,6 @@
 <cba-pre-loader></cba-pre-loader>
 <div class="culmn">
 	<cba-header></cba-header>
-	<router-outlet></router-outlet>
+	<router-outlet (deactivate)="onDeactivate()"></router-outlet>
 	<cba-footer></cba-footer>
 </div>
