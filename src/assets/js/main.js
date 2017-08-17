@@ -1,6 +1,6 @@
 "use strict";
 jQuery(document).ready(function ($) {
-	$(".loaded").rotate({ count:2, easing:'ease-out' });
+	$(".loaded").rotate({ count:5, easing:'ease-out' });
 	$(window).load(function () {
 		setTimeout(function () {
 			$(".loaded").fadeOut();

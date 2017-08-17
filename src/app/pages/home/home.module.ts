@@ -7,7 +7,6 @@ import { CounterUpComponent } from './counter-up/counter-up.component';
 import { ComponentsModule } from '../../components/components.module';
 import { TimelineComponent } from './timeline/timeline.component';
 import { BannerHomeComponent } from './banner-home/banner-home.component';
-import { PartnersComponent } from './partners/partners.component';
 import { HighlightsNewsComponent } from './highlights-news/highlights-news.component';
 import { ButtonBlockComponent } from './button-block/button-block.component';
 
@@ -18,7 +17,6 @@ import { ButtonBlockComponent } from './button-block/button-block.component';
 		CounterUpComponent,
 		TimelineComponent,
 		BannerHomeComponent,
-		PartnersComponent,
 		HighlightsNewsComponent,
 		ButtonBlockComponent
 	],

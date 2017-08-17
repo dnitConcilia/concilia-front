@@ -9,4 +9,5 @@ export const ROUTES: Routes = [
 	{path: 'noticias', loadChildren: './pages/news/news.module#NewsModule'},
 	{path: 'providencias', loadChildren: './pages/measures/measures.module#MeasuresModule'},
 	{path: 'parceiros', loadChildren: './pages/partners/partners.module#PartnersModule'},
+	{path: 'comunidades', loadChildren: './pages/communyts/communyts.module#CommunytsModule'},
 ];
