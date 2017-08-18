@@ -23,7 +23,7 @@ import { ROUTES } from './app.routes';
 		BrowserModule,
 		HttpModule,
 		RouterModule.forRoot(ROUTES),
-		HomeModule
+		HomeModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent]

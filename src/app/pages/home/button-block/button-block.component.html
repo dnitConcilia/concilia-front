@@ -1,8 +1,16 @@
-<button *ngIf="btnIcon == 'acervo'"class="btn-block btn-block-2 btn-block-2b">
+<button (click)="goToMedia()" *ngIf="btnIcon == 'acervo'"class="btn-block btn-block-2 btn-block-2b">
 	<div style="height:150px;">
 		<div class="visit-media-icon">
 			<i aria-hidden="true" class="fa fa-camera fa-4x"></i>
 			<h2>VISITE NOSSO ACERVO</h2>
+		</div>
+	</div>
+</button>
+<button (click)="goToNews()" *ngIf="btnIcon == 'news'"class="btn-block-orange btn-block-orange-2 btn-block-orange-2b">
+	<div>
+		<div class="visit-media-icon">
+			<i class="fa fa-newspaper-o fa-4x" aria-hidden="true" style="color:white"></i>
+			<h2 style="color:white">VER TODAS AS NOTÍCIAS</h2>
 		</div>
 	</div>
 </button>

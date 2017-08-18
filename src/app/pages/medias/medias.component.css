@@ -1,0 +1,82 @@
+img {
+	border: 0;
+}
+/* Base Styles */
+* {
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*[hidden] {
+	display: none;
+}
+
+
+/* Photo */
+#photo {
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+}
+figure {
+	margin: 0;
+	text-align: center;
+}
+
+@media (min-width: 700px) {
+	figure {
+		text-align: left;
+		margin: 1em auto;
+		position: relative;
+		background-color: #fff;
+		width: 440px;
+		padding: 20px;
+		height: 500px;
+		vertical-align: bottom;
+		box-shadow: 2px 2px 8px rgba(0,0,0,0.6), inset 0 0 30px rgba(0,0,0,0.2);
+	}
+	figure::before,
+	figure::after {
+		content: "";
+		position: absolute;
+		background-color: #fff;
+		width: 440px;
+		height: 500px;
+		box-shadow: 2px 2px 8px rgba(0,0,0,0.6), inset 0 0 30px rgba(0,0,0,0.2);
+		-webkit-transform-origin: bottom left;
+		-moz-transform-origin: bottom left;
+		-ms-transform-origin: bottom left;
+		-o-transform-origin: bottom left;
+		transform-origin: bottom left;
+	}
+	figure::before {
+		top: 5px;
+		left: 5px;
+		z-index: -1;
+		-webkit-transform: rotate(2deg);
+		-moz-transform: rotate(2deg);
+		-ms-transform: rotate(2deg);
+		-o-transform: rotate(2deg);
+		transform: rotate(2deg);
+	}
+	figure::after {
+		top: 10px;
+		z-index: -2;
+		-webkit-transform: rotate(3deg);
+		-moz-transform: rotate(3deg);
+		-ms-transform: rotate(3deg);
+		-o-transform: rotate(3deg);
+		transform: rotate(3deg);
+	}
+	figcaption {
+		color: #333;
+		font-size: 1.7em;
+		line-height: 2;
+		padding: 10px;
+		text-align: center;
+		font-family: 'Homemade Apple', serif;
+		font-weight: 400;
+	}
+}

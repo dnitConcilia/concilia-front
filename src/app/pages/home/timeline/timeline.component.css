@@ -55,8 +55,8 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
 }
-.tl-item:hover {
-  /*width: 30% !important;*/
+.tl-item:hover .tl-year{
+  display: none;
 }
 .tl-item:hover:after {
   opacity: 0;
@@ -89,7 +89,7 @@ body {
   z-index: 1;
   text-align: center;
   margin: 0 1.618em;
-  top: 55%;
+  /*top: 55%;*/
   opacity: 0;
 }
 .tl-content h1 {
