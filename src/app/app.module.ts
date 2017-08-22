@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
 // import {LocationStrategy, HashLocationStrategy} from '@angular/common';
@@ -23,6 +24,7 @@ import { ROUTES } from './app.routes';
 	imports: [
 		BrowserModule,
 		HttpModule,
+		FormsModule,
 		RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules}),
 		HomeModule
 	],

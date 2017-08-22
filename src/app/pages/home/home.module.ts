@@ -13,6 +13,7 @@ import { ButtonBlockComponent } from './button-block/button-block.component';
 import { ROUTES } from './home.routes';
 import { NewsService } from '../../services/news.service';
 import { TimelineService } from '../../services/timeline.service';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
 	declarations: [
@@ -27,7 +28,8 @@ import { TimelineService } from '../../services/timeline.service';
 	imports: [
 		CommonModule,
 		ComponentsModule,
-		RouterModule.forChild(ROUTES)
+		RouterModule.forChild(ROUTES),
+		PipesModule
 	],
 	exports: [
 		// HomeComponent

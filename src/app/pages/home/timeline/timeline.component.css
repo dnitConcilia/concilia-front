@@ -141,3 +141,6 @@ body {
 .tl-item:hover .tl-year {
 	display: none;
 }
+.carousel-inner>.item {
+	display: block!important;
+}

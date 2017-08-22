@@ -23,18 +23,17 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
-		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li *ngFor="let i of n_events" data-target="#myCarousel" [attr.data-slide-to]="i"></li>
 		  </ol>
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
 				<div *ngFor="let item of events" class="item">
 					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url({{basePathImage}}{{item.image}})"></div>
+						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
 
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">{{item.date}}</p>
+							<p class="f2 heading--sanSerif">{{item.date | humanizeDate}}</p>
 						</div>
 
 						<div class="tl-content">
