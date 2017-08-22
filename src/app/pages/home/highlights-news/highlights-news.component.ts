@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../../../services/news.service';
+import { News } from '../../news/news';
+import { STATIC_URL } from '../../../config';
 
 declare var jquery: any;
 declare var $: any;
@@ -10,9 +13,17 @@ declare var $: any;
 })
 export class HighlightsNewsComponent implements OnInit {
 
-	constructor() { }
+	public news: Array<News>
+	public basePathImage = STATIC_URL;
+
+	constructor(private newsService: NewsService) { }
 
 	ngOnInit() {
+		this.newsService.lastFour()
+			.then((response) => {
+				this.news = response;
+			})
+			.catch(err => console.log(err));
 		try {
 			$('.tile').show();
 			$('#portfoliowork').mixItUp({

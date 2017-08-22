@@ -16,117 +16,18 @@
         <div class="row">
                 <div class="col-sm-6">
                     <div class="head_title">
-                        <h3 class="font-3rem">EM DESTAQUE</h3>
+                        <h3 class="font-3rem">Notícias</h3>
                         <div class="separator"></div>
                     </div>
                 </div>
 		</div>
 		<div class="row">
-			<div class="col-sm-6 bcards" >
+			<div *ngFor="let item of news" class="col-sm-6 bcards" >
 				<div class="view view-first">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
+				  <img style="width:500px; height:300px" src="{{item.image}}" />
 				  <div class="mask">
-					<h2>Concilia BR-381 e Anel define regras e critérios para o reassentamento</h2>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 bcards" >
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 web ">
-				<div class="view view-first">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask">
-					<h2>The Only Living Boy in New York</h2>
-					<p>Words and such, a whole lot more of muh flippin' words.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 web" >
-				<div class="view view-first">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 bcards" >
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 web" >
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 flyers">
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 flyers">
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-
-            <div class="col-sm-6 bcards" >
-                <div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
-				  </div>
-				</div>
-            </div>
-            <div class="col-sm-6 flyers">
-				<div class="view view-tenth">
-				  <img style="width:500px; height:300px" src="assets/images/test_new.jpg" />
-				  <div class="mask"></div>
-				  <div class="content">
-					<h2>Midtown</h2>
-					<p>A description of some sort between these tags. I am so cool and awesomely awesome.</p>
-					<a href="#" class="info">Read More</a>
+					<h2>{{item.title}}</h2>
+					<a [routerLink]="['/noticias', item.slug]" class="info">Leia Mais...</a>
 				  </div>
 				</div>
             </div>

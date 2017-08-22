@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EventTimeline } from './event-timeline.interface';
+import { Timeline } from '../../../../interface/timeline';
+import { TimelineService } from '../../../services/timeline.service';
+import { STATIC_URL } from '../../../config';
 
 @Component({
 	selector: 'cba-timeline',
@@ -8,14 +10,22 @@ import { EventTimeline } from './event-timeline.interface';
 })
 export class TimelineComponent implements OnInit {
 
-	public items: Array<EventTimeline> = [
-		{id: 1, title: 'string', date: 'string', text: 'string', hasImage: false},
-		{id: 2, title: 'string', date: 'string', text: 'string', hasImage: false}
-	];
+	public events: Array<Timeline> = [];
+	public basePathImage = STATIC_URL;
 
-	constructor() {}
+	constructor(
+		private timelineService: TimelineService
+	) {}
 
 	ngOnInit() {
+		this.timelineService.getAll()
+			.then((response) => {
+				console.log(response);
+				this.events = response;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 }

@@ -29,110 +29,17 @@
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-				<div class="item active">
+				<div *ngFor="let item of events" class="item">
 					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
+						<div class="tl-bg" style="background-image: url({{basePathImage}}{{item.image}})"></div>
 
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
+							<p class="f2 heading--sanSerif">{{item.date}}</p>
 						</div>
 
 						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-				</div>
-				<div class="item">
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-						</div>
-
-					</div>
-					<div class="tl-item">
-						<div class="tl-bg" style="background-image: url(https://placeimg.com/801/801/nature)"></div>
-
-						<div class="tl-year">
-							<p class="f2 heading--sanSerif">2011</p>
-						</div>
-
-						<div class="tl-content">
-							<h1>Lorem ipsum dolor sit</h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
+							<h1>{{item.title}}</h1>
+							<p>{{item.text}}</p>
 						</div>
 
 					</div>

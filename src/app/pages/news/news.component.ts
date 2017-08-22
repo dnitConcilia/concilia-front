@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
+
+import { NewsService } from '../../services/news.service';
+import { News } from './news';
 
 @Component({
 	selector: 'cba-news',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-	constructor() { }
+	public news: Array<News>;
+	constructor(
+		private newsService: NewsService
+	) { }
 
 	ngOnInit() {
+		this.newsService.getAll()
+			.then((response) => {
+				this.news = response;
+			});
 	}
 
 }

@@ -89,7 +89,7 @@ body {
   z-index: 1;
   text-align: center;
   margin: 0 1.618em;
-  top: 55%;
+  top: 10%;
   opacity: 0;
 }
 .tl-content h1 {
@@ -98,6 +98,7 @@ body {
   color: #1779cf;
   font-size: 1.44rem;
   font-weight: normal;
+  line-height: 2rem;
 }
 
 .tl-year {
@@ -135,4 +136,8 @@ body {
 }
 .display-flex {
 	display: flex!important;
+}
+
+.tl-item:hover .tl-year {
+	display: none;
 }
