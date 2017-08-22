@@ -30,20 +30,20 @@
 										<a class="dropbtn" style="cursor:pointer;">Programa</a>
 										<ul class="dropdown-content ul-submenu" style="right: auto;">
 											<li><a [routerLink]="['/parceiros']">Parceiros</a></li>
-											<li><a href="#">Concelho executivo</a></li>
-											<li><a href="#">Ação civil pública</a></li>
-											<li><a href="#">Manual da identidade visual</a></li>
+											<li><a [routerLink]="['/conselho-executivo']">Concelho executivo</a></li>
+											<li><a [routerLink]="['/acao-publica']">Ação civil pública</a></li>
+											<li><a [routerLink]="['/identidade-visual']">Manual da identidade visual</a></li>
 										</ul>
 									</li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/comunidades']">Comunidades</a></li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
 										<a [routerLink]="['/imoveis']">Imóveis</a>
 										<!-- <ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a href="#">Banco de imóveis</a></li>
-											<li><a href="#">Localização dos imóveis</a></li>
-											<li><a href="#">Características dos imóveis</a></li>
-											<li><a href="#">Destinação dos imóveis</a></li>
-											<li><a href="#">Acesso aos imóveis</a></li>
+											<li><a>Banco de imóveis</a></li>
+											<li><a>Localização dos imóveis</a></li>
+											<li><a>Características dos imóveis</a></li>
+											<li><a>Destinação dos imóveis</a></li>
+											<li><a>Acesso aos imóveis</a></li>
 										</ul> -->
 									</li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/providencias']">Providências</a></li>

@@ -1,9 +1,9 @@
-<section id="portfolio" class="portfolio lightbg" style="padding-top:50px;">
-    <div class="container">
+<section id="portfolio" class="portfolio lightbg" style="padding-top:100px;padding-bottom:50px">
+	<div class="container-fluid">
         <div class="row">
-                <div class="col-sm-6">
-                    <div class="head_title" style="margin-bottom: 50px;">
-                        <h3 style="font-size: 2rem;">EM DESTAQUE</h3>
+                <div class="col-md-offset-1 col-sm-6">
+                    <div class="head_title">
+                        <h3 class="font-3rem">EM DESTAQUE</h3>
                         <div class="separator"></div>
                     </div>
                 </div>
@@ -20,20 +20,5 @@
             </div>
 		</div>
     </div>
-	<div class="read-more-news-overlay">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="text-center">
-					<div class="col-sm-12 no-padding">
-						<a [routerLink]="['/noticias']">
-							<div class="read-more-news-icon">
-								<i class="fa fa-newspaper-o fa-4x" aria-hidden="true" style="color:white"></i>
-								<h2 style="color:white">VER TODAS AS NOTÍCIAS</h2>
-							</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 </section>
+<cba-button-block btnIcon="news"></cba-button-block>
