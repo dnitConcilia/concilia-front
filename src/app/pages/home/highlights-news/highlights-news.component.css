@@ -1,5 +1,5 @@
 #hover {
-  color: rgba(188, 175, 204, 0.9);
+  color: rgba(255,102,39, 0.9);
 }
 
 h2#testimonials {
@@ -91,7 +91,7 @@ div#all {
 
 .view-first .mask {
   opacity: 0;
-  background-color: rgba(58, 1, 132, 0.44);
+  background-color: rgba(255,102,39, 0.6);
   transition: all 0.4s ease-in-out;
 }
 
@@ -267,4 +267,20 @@ div#all {
 .view-tenth:hover a.info {
   transform: scale(1);
   opacity: 1;
+}
+.separator {
+	height: 1px;
+	width: 300px;
+	margin: 20px 0px;
+	background: #fff;
+	position: relative;
+}
+.separator:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100px;
+	background: #ff7200;
+	content: "";
 }

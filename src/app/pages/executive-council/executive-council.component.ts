@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentService } from '../../services/document.service';
+import { STATIC_URL } from '../../config';
 
 @Component({
 	selector: 'cba-executive-council',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExecutiveCouncilComponent implements OnInit {
 
-	constructor() { }
+	public docExecCouncil: string;
+
+	constructor(private docService: DocumentService) { }
 
 	ngOnInit() {
+		this.docService.getById(1)
+			.then((response) => {
+				this.docExecCouncil = response.document;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 }

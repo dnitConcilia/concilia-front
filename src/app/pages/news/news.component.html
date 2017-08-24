@@ -12,17 +12,17 @@
     </div>
 </section>
 <section id="portfolio" class="portfolio lightbg" style="padding-top:100px;padding-bottom:100px">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
                 <div class="col-sm-6">
-                    <div class="head_title">
+                    <div class="head_title" style="margin-left:15px;">
                         <h3 class="font-3rem">Notícias</h3>
                         <div class="separator"></div>
                     </div>
                 </div>
 		</div>
 		<div class="row">
-			<div *ngFor="let item of news" class="col-sm-6 bcards" >
+			<div *ngFor="let item of news" class="col-sm-4 bcards" >
 				<div class="view view-first">
 				  <img style="width:500px; height:300px" src="{{item.image}}" />
 				  <div class="mask">

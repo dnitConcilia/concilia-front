@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentService } from '../../services/document.service';
 
 @Component({
 	selector: 'cba-visual-identity',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisualIdentityComponent implements OnInit {
 
-	constructor() { }
+	public docVisualIdentity: string;
+
+	constructor(private docService: DocumentService) { }
 
 	ngOnInit() {
+		this.docService.getById(2)
+			.then((response) => {
+				this.docVisualIdentity = response.document;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 }

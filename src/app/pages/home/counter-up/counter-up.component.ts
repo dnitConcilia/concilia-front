@@ -17,8 +17,8 @@ export class CounterUpComponent implements OnInit {
 			text: 'Moradias seladas'
 		},
 		{
-			num: 264,
-			text: 'Nº de famílias na  1ª etapa'
+			num: 1151,
+			text: 'Imóveis prospectados'
 		},
 		{
 			num: 108,

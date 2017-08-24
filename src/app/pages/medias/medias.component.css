@@ -16,8 +16,9 @@ img {
 
 /* Photo */
 #photo {
-	width: 400px;
-	height: 400px;
+	width: 300px;
+	height: 200px;
+	-o-object-fit: cover;
 	object-fit: cover;
 }
 figure {
@@ -25,15 +26,15 @@ figure {
 	text-align: center;
 }
 
-@media (min-width: 700px) {
+/*@media (min-width: 700px) {*/
 	figure {
 		text-align: left;
 		margin: 1em auto;
 		position: relative;
 		background-color: #fff;
-		width: 440px;
+		width: 300px;
 		padding: 20px;
-		height: 500px;
+		height: 300px;
 		vertical-align: bottom;
 		box-shadow: 2px 2px 8px rgba(0,0,0,0.6), inset 0 0 30px rgba(0,0,0,0.2);
 	}
@@ -79,4 +80,4 @@ figure {
 		font-family: 'Homemade Apple', serif;
 		font-weight: 400;
 	}
-}
+/*}*/

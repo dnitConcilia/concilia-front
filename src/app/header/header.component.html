@@ -46,7 +46,13 @@
 											<li><a>Acesso aos imóveis</a></li>
 										</ul> -->
 									</li>
-									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/providencias']">Providências</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
+										<a class="dropbtn" style="cursor:pointer;">Providências</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a [routerLink]="['/plano-providencias']">Plano de providências</a></li>
+											<li><a [routerLink]="['/criterios-regras']">Critérios e regras</a></li>
+										</ul>
+									</li>
                                     <li><a [routerLink]="['/noticias']">Notícias</a></li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/acervo']">Acervo</a></li>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/contato']">Contato</a></li>

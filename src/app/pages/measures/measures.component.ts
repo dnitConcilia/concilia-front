@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentService } from '../../services/document.service';
 
 
 @Component({
@@ -8,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeasuresComponent implements OnInit {
 
-	constructor() { }
+	public actionPlan: string;
+	public criteriaRules: string;
+	constructor(private docService: DocumentService) { }
 
 	ngOnInit() {
+		this.docService.getById(3)
+			.then((response) => {
+				this.actionPlan = response.document;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+		this.docService.getById(4)
+			.then((response) => {
+				this.criteriaRules = response.document;
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 }

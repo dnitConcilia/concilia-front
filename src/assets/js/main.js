@@ -1,4 +1,5 @@
 "use strict";
+
 jQuery(document).ready(function ($) {
 	$(".loaded").rotate({ count:5, easing:'ease-out' });
 	$(window).load(function () {

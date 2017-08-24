@@ -1,4 +1,4 @@
-{
+export const mapJson = {
 	"storymap": {
 		"slides": [{
 			"type": "overview",
@@ -25,7 +25,7 @@
 				"line": false
 			},
 			"media": {
-					"url": "/assets/images/comunidades_fotos/vila_pica_pau.jpg",
+					"url": "assets/images/comunidades_fotos/vila_pica_pau.jpg",
 					"credit": "",
 					"caption": ""
 			}
@@ -42,7 +42,7 @@
 				"line": false
 			},
 			"media": {
-					"url":    "/assets/images/comunidades_fotos/Vila-da-paz.jpg",
+					"url":    "assets/images/comunidades_fotos/Vila-da-paz.jpg",
 					"credit": "",
 					"caption": ""
 				}
@@ -59,7 +59,7 @@
 					"line": false
 			},
 			"media": {
-					"url":              "/assets/images/comunidades_fotos/vila_da_luz.jpg",
+					"url":              "assets/images/comunidades_fotos/vila_da_luz.jpg",
 					"credit":           "",
 					"caption":          ""
 				}
@@ -77,10 +77,10 @@
 				"line": false
 			},
 			"media": {
-					"url":  "/assets/images/comunidades_fotos/bom_destino.jpg",
+					"url":  "assets/images/comunidades_fotos/bom_destino.jpg",
 					"credit": "",
 					"caption": ""
 				}
 		}]
 	}
-}
+};

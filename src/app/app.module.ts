@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeModule } from './pages/home/home.module';
 
 import { ROUTES } from './app.routes';
+import { DocumentService } from './services/document.service';
 
 @NgModule({
 	declarations: [
@@ -29,6 +30,7 @@ import { ROUTES } from './app.routes';
 		HomeModule
 	],
 	providers: [
+		DocumentService
 		// {
 		// 	provide: LocationStrategy, useClass: HashLocationStrategy
 		// }
