@@ -80,6 +80,7 @@ a{
     /*    direction: rtl;*/
 }
 p {
+	text-align: justify;
     margin: 0 0 15px;
 
 }
