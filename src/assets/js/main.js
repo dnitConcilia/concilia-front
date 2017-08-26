@@ -136,7 +136,7 @@ jQuery(document).ready(function ($) {
 
 	jQuery(window).scroll(function () {
 		var top = jQuery(document).scrollTop();
-		var height = 300;
+		var height = 100;
 		//alert(batas);
 
 		if (top > height) {

@@ -23,70 +23,58 @@
 		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
-		    <li *ngFor="let i of n_events" data-target="#myCarousel" [attr.data-slide-to]="i"></li>
+		    <li *ngFor="let i of n_events" data-target="#myCarousel" [attr.data-slide-to]="i"  [ngClass]="{'active': i == 0}"></li>
 		  </ol>
 
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner">
-				<div *ngFor="let item of events" class="item">
+
+				<div *ngFor="let event of events; let p=index" class="item" [ngClass]="{'active': p == 0}">
+
 					<div class="tl-item">
-						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-
+						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + event.item1.image + ')'}"></div>
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">{{item.date | humanizeDate}}</p>
+							<p class="f2 heading--sanSerif">{{event.item1.date | humanizeDate}}</p>
 						</div>
-
 						<div class="tl-content">
-							<h1>{{item.title}}</h1>
-							<p style="font-size: 1.24rem;">{{item.text}}</p>
+							<h1>{{event.item1.title}}</h1>
+							<p style="font-size: 1.24rem;">{{event.item1.text}}</p>
 						</div>
-
 					</div>
-				</div>
-				<div *ngFor="let item of events" class="item">
+
 					<div class="tl-item">
-						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-
+						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + event.item2.image + ')'}"></div>
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">{{item.date | humanizeDate}}</p>
+							<p class="f2 heading--sanSerif">{{event.item2.date | humanizeDate}}</p>
 						</div>
-
 						<div class="tl-content">
-							<h1>{{item.title}}</h1>
-							<p style="font-size: 1.24rem;">{{item.text}}</p>
+							<h1>{{event.item2.title}}</h1>
+							<p style="font-size: 1.24rem;">{{event.item2.text}}</p>
 						</div>
-
 					</div>
-				</div>
-				<div *ngFor="let item of events" class="item">
+
 					<div class="tl-item">
-						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-
+						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + event.item3.image + ')'}"></div>
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">{{item.date | humanizeDate}}</p>
+							<p class="f2 heading--sanSerif">{{event.item3.date | humanizeDate}}</p>
 						</div>
-
 						<div class="tl-content">
-							<h1>{{item.title}}</h1>
-							<p style="font-size: 1.24rem;">{{item.text}}</p>
+							<h1>{{event.item3.title}}</h1>
+							<p style="font-size: 1.24rem;">{{event.item3.text}}</p>
 						</div>
-
 					</div>
-				</div>
-				<div *ngFor="let item of events" class="item">
+
 					<div class="tl-item">
-						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + item.image + ')'}"></div>
-
+						<div class="tl-bg" [ngStyle]="{'background-image': 'url(' + event.item4.image + ')'}"></div>
 						<div class="tl-year">
-							<p class="f2 heading--sanSerif">{{item.date | humanizeDate}}</p>
+							<p class="f2 heading--sanSerif">{{event.item4.date | humanizeDate}}</p>
 						</div>
-
 						<div class="tl-content">
-							<h1>{{item.title}}</h1>
-							<p style="font-size: 1.24rem;">{{item.text}}</p>
+							<h1>{{event.item4.title}}</h1>
+							<p style="font-size: 1.24rem;">{{event.item4.text}}</p>
 						</div>
-
 					</div>
+
 				</div>
 			</div>
 		</div>

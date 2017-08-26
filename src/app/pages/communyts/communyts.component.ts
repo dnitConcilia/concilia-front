@@ -10,6 +10,8 @@ declare var VCO: any;
 })
 export class CommunytsComponent implements OnInit {
 
+	public storymap: any;
+
 	constructor() { }
 
 	ngOnInit() {
@@ -20,10 +22,12 @@ export class CommunytsComponent implements OnInit {
 			zoom: 15,
 		};
 
-		const storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
-		window.onresize = function(event) {
-			storymap.updateDisplay(); // this isn't automatic
-		};
+		this.storymap = new VCO.StoryMap('mapdiv', storymap_data, storymap_options);
+
+	}
+
+	onResize(event) {
+		this.storymap.updateDisplay();
 	}
 
 }
