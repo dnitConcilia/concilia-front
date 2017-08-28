@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 
-import { API_URL } from '../config';
+import { BASE_URL } from '../config';
 import { ResponseResult } from '../../interface/response-result';
 import { Token } from '../../interface/token';
 
@@ -19,7 +19,7 @@ export class TokenService {
 	}
 
 	getToken(): Promise<Token> {
-		const url = API_URL + 'login/';
+		const url = BASE_URL + 'login/';
 		const body = {
 			'username': this.username,
 			'password': this.password
