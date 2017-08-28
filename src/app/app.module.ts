@@ -14,6 +14,7 @@ import { HomeModule } from './pages/home/home.module';
 
 import { ROUTES } from './app.routes';
 import { DocumentService } from './services/document.service';
+import { TokenService } from './services/token.service';
 
 @NgModule({
 	declarations: [
@@ -30,7 +31,8 @@ import { DocumentService } from './services/document.service';
 		HomeModule
 	],
 	providers: [
-		DocumentService
+		DocumentService,
+		TokenService
 		// {
 		// 	provide: LocationStrategy, useClass: HashLocationStrategy
 		// }

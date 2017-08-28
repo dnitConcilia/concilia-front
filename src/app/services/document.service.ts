@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { WEBTOKEN, API_URL } from '../config';
+import { API_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
 import { Document } from '../../interface/document';
+import { TokenService } from './token.service';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -13,16 +14,25 @@ export class DocumentService implements DaoInterface<Document> {
 
 	private headers: Headers;
 
-	constructor(private http: Http) {
-		this.headers = new Headers (
-			{
-				'Content-Type': 'application/json',
-				'Authorization': WEBTOKEN
-			}
-		);
+	constructor(
+		private http: Http,
+		private tokenService: TokenService
+	) {
+		this.tokenService.getToken()
+			.then((response) => {
+				this.headers = new Headers (
+					{
+						'Content-Type': 'application/json',
+						'Authorization': 'token ' + response.token
+					}
+				);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
 	}
 	getAll(): Promise<Array<Document>> {
-		let url = API_URL + 'documents/';
+		const url = API_URL + 'documents/';
 
 		return this.http.get(url, {headers: this.headers})
 				.toPromise()
@@ -31,7 +41,7 @@ export class DocumentService implements DaoInterface<Document> {
 	}
 
 	getById(id: number): Promise<Document> {
-		let url = API_URL + 'documents/' + id + '/';
+		const url = API_URL + 'documents/' + id + '/';
 		return this.http.get(url, {headers: this.headers})
 				.toPromise()
 				.then(response => response.json() as Document)
@@ -39,7 +49,7 @@ export class DocumentService implements DaoInterface<Document> {
 	}
 
 	create(object: Document): Promise<Document> {
-		let url = API_URL + 'documents/';
+		const url = API_URL + 'documents/';
 		return this.http.post(url, JSON.stringify(object), {headers: this.headers})
 				.toPromise()
 				.then((response: Response) => response.json() as Document)
@@ -47,7 +57,7 @@ export class DocumentService implements DaoInterface<Document> {
 	}
 
 	update(object: Document): Promise<Document> {
-		let url = API_URL + 'documents/' + object.id + '/'
+		const url = API_URL + 'documents/' + object.id + '/';
 		return this.http.put(url, JSON.stringify(object), {headers: this.headers})
 				.toPromise()
 				.then((response: Response) => response.json() as Document)
@@ -55,7 +65,7 @@ export class DocumentService implements DaoInterface<Document> {
 	}
 
 	delete(id: number): Promise<Document> {
-		let url = API_URL + 'documents/' + id + '/'
+		const url = API_URL + 'documents/' + id + '/';
 		return this.http.delete(url, {headers: this.headers})
 				.toPromise()
 				.then(response => response.json() as Document)
@@ -63,10 +73,10 @@ export class DocumentService implements DaoInterface<Document> {
 	}
 
 	private handleError(error: any): Promise<ResponseResult> {
-		let responseResult = new ResponseResult();
+		const responseResult = new ResponseResult();
 		responseResult.success = false;
 
-		let result = JSON.parse(error._body);
+		const result = JSON.parse(error._body);
 		responseResult.message = result.message[ 0 ];
 
 		return Promise.reject(responseResult);
