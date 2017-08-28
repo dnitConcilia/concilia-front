@@ -80,6 +80,7 @@ a{
     /*    direction: rtl;*/
 }
 p {
+	text-align: justify;
     margin: 0 0 15px;
 
 }
@@ -184,7 +185,7 @@ h6 {
 }
 p {
     line-height: 2rem;
-    font-size: 0.875rem;
+    /*font-size: 0.875rem;*/
 }
 p:last-child {
     margin-bottom: 0px;

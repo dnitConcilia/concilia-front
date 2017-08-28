@@ -2837,3 +2837,6 @@ only screen and (max-device-width: 500px) {
 .vco-menubar {
 	display: none;
 }
+.service .nav-tabs>li>a {
+    width: 250px;
+}

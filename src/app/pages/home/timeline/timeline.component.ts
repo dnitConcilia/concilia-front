@@ -11,7 +11,7 @@ import { Utils } from '../../../utils/utils';
 })
 export class TimelineComponent implements OnInit {
 
-	public events: Array<Timeline> = [];
+	public events: Array<{item1: Timeline, item2: Timeline, item3: Timeline, item4: Timeline}> = [];
 	public n_events: Array<number>;
 	private utils: Utils;
 	public basePathImage = STATIC_URL;
@@ -25,13 +25,73 @@ export class TimelineComponent implements OnInit {
 	ngOnInit() {
 		this.timelineService.getAll()
 			.then((response) => {
-				this.events = response;
+				// this.events = response;
+				const timelineVoid: Timeline = {
+					id: 0,
+					title: '',
+					date: '',
+					tesxt: '',
+					image: '',
+					legend_image: '',
+				};
 				const decimal = (response.length / 4) % 1;
+				console.log(response.length);
 				if (decimal === 0) {
-					this.n_events = this.utils.range(1, response.length / 4);
+					this.n_events = this.utils.range(0, (response.length / 4) - 1);
 				} else {
-					this.n_events = this.utils.range(1, (response.length / 4) + 1);
+					this.n_events = this.utils.range(0, (response.length / 4));
 				}
+				switch (decimal) {
+					case 0.25:
+						for (let i = 0; i < response.length + 1; i += 4) {
+							this.events.push(
+								{
+									item1: response[i],
+									item2: response[i + 1] || timelineVoid,
+									item3: response[i + 2] || timelineVoid,
+									item4: response[i + 3] || timelineVoid
+								}
+							);
+						}
+					break;
+					case 0.50:
+						for (let i = 0; i < response.length + 2; i += 4) {
+							this.events.push(
+								{
+									item1: response[i],
+									item2: response[i + 1] || timelineVoid,
+									item3: response[i + 2] || timelineVoid,
+									item4: response[i + 3] || timelineVoid
+								}
+							);
+						}
+					break;
+					case 0.75:
+						for (let i = 0; i < response.length + 3; i += 4) {
+							this.events.push(
+								{
+									item1: response[i],
+									item2: response[i + 1] || timelineVoid,
+									item3: response[i + 2] || timelineVoid,
+									item4: response[i + 3] || timelineVoid
+								}
+							);
+						}
+					break;
+					default:
+					for (let i = 0; i < response.length; i += 4) {
+						this.events.push(
+							{
+								item1: response[i],
+								item2: response[i + 1] || timelineVoid,
+								item3: response[i + 2] || timelineVoid,
+								item4: response[i + 3] || timelineVoid
+							}
+						);
+					}
+					break;
+				}
+				console.log(this.events);
 			})
 			.catch((error) => {
 				console.log(error);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../../services/news.service';
 import { News } from '../../news/news';
-import { STATIC_URL } from '../../../config';
+import { BASE_URL } from '../../../config';
 
 declare var jquery: any;
 declare var $: any;
@@ -14,7 +14,7 @@ declare var $: any;
 export class HighlightsNewsComponent implements OnInit {
 
 	public news: Array<News>
-	public basePathImage = STATIC_URL;
+	public basePathImage = BASE_URL;
 
 	constructor(private newsService: NewsService) { }
 
