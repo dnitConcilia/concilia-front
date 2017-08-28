@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenService } from './services/token.service';
 
 declare var $: any;
 
@@ -8,6 +9,10 @@ declare var $: any;
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+	constructor(private tokenService: TokenService) {
+		this.tokenService.login();
+	}
 
 	onDeactivate() {
 		// $('body').animate({ scrollTop: 0 }, 'slow');

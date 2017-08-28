@@ -1,5 +1,6 @@
-export class ResponseResult {
-	data: any = null;
-	message: string = '';
-	success: boolean = false;
+export interface ResponseResult {
+	data: object;
+	message: string;
+	success: boolean;
+	headers: object;
 }

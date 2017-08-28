@@ -5,9 +5,9 @@ import { News } from '../pages/news/news';
 import { API_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
-import { TokenService } from './token.service';
 
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class NewsService implements DaoInterface<News> {
@@ -15,22 +15,16 @@ export class NewsService implements DaoInterface<News> {
 	private headers: Headers;
 
 	constructor(
-		private http: Http,
-		private tokenService: TokenService
+		private http: Http
 	) {
-		this.tokenService.getToken()
-			.then((response) => {
-				this.headers = new Headers (
-					{
-						'Content-Type': 'application/json',
-						'Authorization': 'token ' + response.token
-					}
-				);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		this.headers = new Headers (
+			{
+				'Content-Type': 'application/json',
+				'Authorization': 'token ' + localStorage.getItem('token')
+			}
+		);
 	}
+
 	getAll(): Promise<Array<News>> {
 		const url = API_URL + 'news/';
 
@@ -57,7 +51,7 @@ export class NewsService implements DaoInterface<News> {
 				})
 				.catch(this.handleError);
 	}
-	lastFour(): Promise<Array<News>> {
+	lastSix(): Promise<Array<News>> {
 		const url = API_URL + 'news-last-six/';
 		return this.http.get(url, {headers: this.headers})
 				.toPromise()
@@ -88,14 +82,13 @@ export class NewsService implements DaoInterface<News> {
 				.catch(this.handleError);
 	}
 
-	private handleError(error: any): Promise<ResponseResult> {
-		const responseResult = new ResponseResult();
-		responseResult.success = false;
-
-		const result = JSON.parse(error._body);
-		responseResult.message = result.message[ 0 ];
-
-		return Promise.reject(responseResult);
+	private handleError(error: any): Promise<object> {
+		return Promise.reject({
+			'data': null,
+			'message': JSON.parse(error._body),
+			'success': false,
+			'token': localStorage.getItem('token')
+		});
 	}
 
 }

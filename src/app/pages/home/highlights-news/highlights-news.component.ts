@@ -19,7 +19,7 @@ export class HighlightsNewsComponent implements OnInit {
 	constructor(private newsService: NewsService) { }
 
 	ngOnInit() {
-		this.newsService.lastFour()
+		this.newsService.lastSix()
 			.then((response) => {
 				this.news = response;
 			})

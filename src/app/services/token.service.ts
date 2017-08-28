@@ -16,27 +16,30 @@ export class TokenService {
 		this.headers = new Headers (
 			{'Content-Type': 'application/json'}
 		);
+		this.login();
 	}
 
-	getToken(): Promise<Token> {
-		const url = BASE_URL + 'login/';
+	login(): void {
+		const url = BASE_URL + '/login/';
 		const body = {
 			'username': this.username,
 			'password': this.password
 		};
-		return this.http.post(url, JSON.stringify(body), {headers: this.headers})
-				.toPromise()
-				.then((response: Response) => response.json() as Token)
-				.catch(this.handleError);
+		this.http.post(url, JSON.stringify(body), {headers: this.headers})
+			.toPromise()
+			.then((response: Response) => {
+				let resp = response.json();
+				localStorage.setItem('token', resp.token);
+			})
+			.catch(this.handleError);
 	}
 
-	private handleError(error: any): Promise<ResponseResult> {
-		const responseResult = new ResponseResult();
-		responseResult.success = false;
-
-		const result = JSON.parse(error._body);
-		responseResult.message = result.message[ 0 ];
-
-		return Promise.reject(responseResult);
+	private handleError(error: any): Promise<object> {
+		return Promise.reject({
+			'data': null,
+			'message': JSON.parse(error._body),
+			'success': false,
+			'token': localStorage.getItem('token')
+		});
 	}
 }
