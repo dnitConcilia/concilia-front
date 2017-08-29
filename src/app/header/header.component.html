@@ -53,7 +53,7 @@
 											<li><a [routerLink]="['/criterios-regras']">Critérios e regras</a></li>
 										</ul>
 									</li>
-                                    <li><a [routerLink]="['/noticias']">Notícias</a></li>
+                                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/noticias']">Notícias</a></li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/acervo']">Acervo</a></li>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/contato']">Contato</a></li>
                                 </ul>
