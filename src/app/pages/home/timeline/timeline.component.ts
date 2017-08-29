@@ -30,66 +30,26 @@ export class TimelineComponent implements OnInit {
 					id: 0,
 					title: '',
 					date: '',
-					tesxt: '',
+					text: '',
 					image: '',
-					legend_image: '',
+					legend_image: ''
 				};
-				const decimal = (response.length / 4) % 1;
 				console.log(response.length);
+				const decimal = (response.length / 4) % 1;
 				if (decimal === 0) {
 					this.n_events = this.utils.range(0, (response.length / 4) - 1);
 				} else {
 					this.n_events = this.utils.range(0, (response.length / 4));
 				}
-				switch (decimal) {
-					case 0.25:
-						for (let i = 0; i < response.length + 1; i += 4) {
-							this.events.push(
-								{
-									item1: response[i],
-									item2: response[i + 1] || timelineVoid,
-									item3: response[i + 2] || timelineVoid,
-									item4: response[i + 3] || timelineVoid
-								}
-							);
+				for (let i = 0; i < response.length; i += 4) {
+					this.events.push(
+						{
+							item1: response[i] || timelineVoid,
+							item2: response[i + 1] || timelineVoid,
+							item3: response[i + 2] || timelineVoid,
+							item4: response[i + 3] || timelineVoid
 						}
-					break;
-					case 0.50:
-						for (let i = 0; i < response.length + 2; i += 4) {
-							this.events.push(
-								{
-									item1: response[i],
-									item2: response[i + 1] || timelineVoid,
-									item3: response[i + 2] || timelineVoid,
-									item4: response[i + 3] || timelineVoid
-								}
-							);
-						}
-					break;
-					case 0.75:
-						for (let i = 0; i < response.length + 3; i += 4) {
-							this.events.push(
-								{
-									item1: response[i],
-									item2: response[i + 1] || timelineVoid,
-									item3: response[i + 2] || timelineVoid,
-									item4: response[i + 3] || timelineVoid
-								}
-							);
-						}
-					break;
-					default:
-					for (let i = 0; i < response.length; i += 4) {
-						this.events.push(
-							{
-								item1: response[i],
-								item2: response[i + 1] || timelineVoid,
-								item3: response[i + 2] || timelineVoid,
-								item4: response[i + 3] || timelineVoid
-							}
-						);
-					}
-					break;
+					);
 				}
 				console.log(this.events);
 			})

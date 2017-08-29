@@ -22,23 +22,23 @@ export class HighlightsNewsComponent implements OnInit {
 		this.newsService.lastSix()
 			.then((response) => {
 				this.news = response;
+				try {
+					$('.tile').show();
+					$('#portfoliowork').mixItUp({
+						selectors: {
+							target: '.tile',
+							filter: '.filter',
+							sort: '.sort-btn'
+						},
+						animation: {
+							animateResizeContainer: false,
+							effects: 'fade scale'
+						}
+
+					});
+				} catch (e) {}
 			})
 			.catch(err => console.log(err));
-		try {
-			$('.tile').show();
-			$('#portfoliowork').mixItUp({
-				selectors: {
-					target: '.tile',
-					filter: '.filter',
-					sort: '.sort-btn'
-				},
-				animation: {
-					animateResizeContainer: false,
-					effects: 'fade scale'
-				}
-
-			});
-		}catch (e) {}
 	}
 
 }
