@@ -35,7 +35,14 @@
 											<li><a [routerLink]="['/identidade-visual']">Manual da identidade visual</a></li>
 										</ul>
 									</li>
-									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/comunidades']">Comunidades</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
+										<a class="dropbtn" style="cursor:pointer;">Comunidades</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a [routerLink]="['/comunidades']">Comunidades</a></li>
+											<li *ngFor="let item of communities"><a [routerLink]="['/comunidades/' + item.slug]">{{item.title}}</a></li>
+											<li><a [routerLink]="['/cmar']">CMAR</a></li>
+										</ul>
+									</li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
 										<a [routerLink]="['/imoveis']">Imóveis</a>
 										<!-- <ul class="dropdown-content ul-submenu" style="right: auto;">
@@ -56,6 +63,7 @@
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/noticias']">Notícias</a></li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/acervo']">Acervo</a></li>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/contato']">Contato</a></li>
+									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/perguntas-frequentes']">Dúvidas</a></li>
                                 </ul>
                             </div>
 

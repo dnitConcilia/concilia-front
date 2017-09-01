@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-12 ">
 					<h1 style="text-align: -webkit-center;">
-						<img src="assets/images/logoconcilia.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
+						<img src="assets/images/banner_images/CONTATO.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
 					</h1>
 	            </div>
             </div>
@@ -20,8 +20,8 @@
                         <div class="col-sm-6">
 
                             <div class="main_contact_info">
-                                <div class="head_title">
-                                    <h3>CONTATO</h3>
+                                <div class="head_title" style="margin-bottom: 50px;">
+                                    <h3 class="font2-3">CONTATO</h3>
                                     <div class="separator"></div>
                                 </div>
                                 <div class="row">
@@ -29,7 +29,7 @@
                                         <div class="col-sm-12">
                                             <div class="single_contact_info">
                                                 <div class="single_info_icon">
-                                                    <i class="fa fa-home"></i>
+                                                    <i class="fa fa-home" style="color: #0093e4;"></i>
                                                 </div>
                                                 <div class="single_info_text">
                                                     <h3>Venha nos visitar</h3>
@@ -40,7 +40,7 @@
                                         <div class="col-sm-12">
                                             <div class="single_contact_info">
                                                 <div class="single_info_icon">
-                                                    <i class="fa fa-envelope-o"></i>
+                                                    <i class="fa fa-envelope-o" style="color:#ff662a;"></i>
                                                 </div>
                                                 <div class="single_info_text">
                                                     <h3>Nosso email</h3>
@@ -51,7 +51,7 @@
                                         <div class="col-sm-12">
                                             <div class="single_contact_info">
                                                 <div class="single_info_icon">
-                                                    <i class="fa fa-mobile"></i>
+                                                    <i class="fa fa-mobile" style="color: #008e48;"></i>
                                                 </div>
                                                 <div class="single_info_text">
                                                     <h3>Ligue para nós</h3>
@@ -62,7 +62,7 @@
                                         <div class="col-sm-12">
                                             <div class="single_contact_info">
                                                 <div class="single_info_icon">
-                                                    <i class="fa fa-clock-o"></i>
+                                                    <i class="fa fa-clock-o" style="color: #fe3378;"></i>
                                                 </div>
                                                 <div class="single_info_text">
                                                     <h3>Horário de trabalho</h3>
@@ -76,23 +76,29 @@
                         </div>
 
                         <div class="col-sm-6">
-                            <div class="head_title">
-                                <h3>ENVIE A SUA MENSAGEM POR AQUI</h3>
+                            <div class="head_title" style="margin-bottom: 50px;">
+                                <h3 class="font2-3">DEIXE SUA MENSAGEM AQUI</h3>
                                 <div class="separator"></div>
                             </div>
                             <div class="single_contant_left">
-                                <form action="#" id="formid">
+                                <form (ngSubmit)="onSubmit()" #contactForm="ngForm" novalidate>
                                     <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
-
+									<div class="row">
+										<div class="alert alert-info" role="alert" [hidden]="contactForm.form.valid">
+											Preencha todos os campos
+										</div>
+									</div>
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="name" placeholder="Primeiro nome" required="">
+                                            <div [ngClass]="getFormGroupClass(name.valid, name.pristine)">
+												<label for="name" class="form-control-label">Nome</label>
+                                                <input type="text" [ngClass]="getFormControlClass(name.valid, name.pristine)" name="name" placeholder="Primeiro nome" required [(ngModel)]="contact.name" #name="ngModel" style="border-width:2px;">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="name" placeholder="Último nome" required="">
+                                            <div [ngClass]="getFormGroupClass(lastName.valid, lastName.pristine)">
+												<label for="lastName" class="form-control-label">Sobrenome</label>
+                                                <input type="text" [ngClass]="getFormControlClass(lastName.valid, lastName.pristine)" name="lastName" placeholder="Sobrenome" required [(ngModel)]="contact.lastName" #lastName="ngModel" style="border-width:2px;">
                                             </div>
                                         </div>
                                     </div>
@@ -100,24 +106,27 @@
 
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                            <div [ngClass]="getFormGroupClass(email.valid, email.pristine)">
+												<label for="email" class="form-control-label">Email</label>
+                                                <input type="email" [ngClass]="getFormControlClass(email.valid, email.pristine)" name="email" placeholder="Email" required [(ngModel)]="contact.email" #email="ngModel" style="border-width:2px;">
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" placeholder="Assunto" required="">
+                                            <div [ngClass]="getFormGroupClass(subject.valid, subject.pristine)">
+												<label for="subject" class="form-control-label">Assunto</label>
+                                                <input type="text" [ngClass]="getFormControlClass(subject.valid, subject.pristine)" name="subject" placeholder="Assunto" required [(ngModel)]="contact.subject" #subject="ngModel" style="border-width:2px;">
                                             </div>
                                         </div>
                                     </div>
 
 
-                                    <div class="form-group">
-                                        <textarea class="form-control" name="message" rows="8" placeholder="Mensagem"></textarea>
+                                    <div [ngClass]="getFormGroupClass(message.valid, message.pristine)">
+										<label for="message" class="form-control-label">Mensagem</label>
+                                        <textarea [ngClass]="getFormControlClass(message.valid, message.pristine)" name="message" rows="8" placeholder="Mensagem" required [(ngModel)]="contact.message" #message="ngModel" style="border-width:2px;"></textarea>
                                     </div>
 
                                     <div class="">
-                                        <input type="submit" value="Enviar" class="btn btn-primary">
+                                        <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!contactForm.form.valid">
                                     </div>
                                     <!--</div>-->
                                 </form>
@@ -129,14 +138,14 @@
         </div>
 		<div class="row">
 			<div class="head_title" style="margin-bottom: 25px;">
-                <h3>Como chegar</h3>
+                <h3 class="font2-3">Como chegar</h3>
                 <div class="separator"></div>
             </div>
 			<div class="contact_info_content">
 				<div class="col-sm-6">
 					<div class="single_contact_info">
 						<div class="single_info_icon">
-							<i class="fa fa-subway"></i>
+							<i class="fa fa-subway" style="color: #0093e4;"></i>
 						</div>
 						<div class="single_info_text">
 							<h3>Metrô</h3>
@@ -147,7 +156,7 @@
 				<div class="col-sm-6">
 					<div class="single_contact_info">
 						<div class="single_info_icon">
-							<i class="fa fa-bus"></i>
+							<i class="fa fa-bus" style="color:#ff662a;"></i>
 						</div>
 						<div class="single_info_text">
 							<h3>Ônibus</h3>
@@ -158,7 +167,7 @@
 				<div class="col-sm-6">
 					<div class="single_contact_info">
 						<div class="single_info_icon">
-							<i class="fa fa-male"></i>
+							<i class="fa fa-male" style="color: #008e48;"></i>
 						</div>
 						<div class="single_info_text">
 							<h3>Caminhada</h3>
@@ -169,7 +178,7 @@
 				<div class="col-sm-6">
 					<div class="single_contact_info">
 						<div class="single_info_icon">
-							<i class="fa fa-map-marker"></i>
+							<i class="fa fa-map-marker" style="color: #fe3378;"></i>
 						</div>
 						<div class="single_info_text">
 							<h3>Pontos de referências</h3>

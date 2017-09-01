@@ -12,10 +12,12 @@ export const ROUTES: Routes = [
 	{path: 'criterios-regras', loadChildren: './pages/criteria/criteria.module#CriteriaModule'},
 	{path: 'comunidades', loadChildren: './pages/communyts/communyts.module#CommunytsModule'},
 	{path: 'cmar', loadChildren: './pages/cmar/cmar.module#CmarModule'},
+	{path: 'perguntas-frequentes', loadChildren: './pages/questions/questions.module#QuestionsModule'},
 	{path: 'contato', loadChildren: './pages/contact/contact.module#ContactModule'},
 	{path: 'imoveis', loadChildren: './pages/properties/properties.module#PropertiesModule'},
 	{path: 'noticias', loadChildren: './pages/news/news.module#NewsModule'},
 	{path: 'noticias/:slug', loadChildren: './pages/news-detail/news-detail.module#NewsDetailModule'},
+	{path: 'comunidades/:slug', loadChildren: './pages/community-detail/community-detail.module#CommunityDetailModule'},
 	{path: 'providencias', loadChildren: './pages/measures/measures.module#MeasuresModule'},
 	{path: 'parceiros', loadChildren: './pages/partners/partners.module#PartnersModule'},
 ];

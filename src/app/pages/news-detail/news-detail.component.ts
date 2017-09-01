@@ -25,13 +25,15 @@ export class NewsDetailComponent implements OnInit {
 	ngOnInit() {
 		this.newsService.getBySlug(this.activatedRoute.snapshot.params['slug'])
 			.then((response) => {
-				this.news = response;
+				$('#show-modal-concilia').hover(function() {
+					$('.modal').modal('show');
+				});
 				response.image = this.apiUrl + response.image;
-
+				this.news = response;
+			})
+			.catch((error) => {
+				console.log(error);
 			});
-		$('#show-modal-concilia').hover(function() {
-			$('.modal').modal('show');
-		});
 	}
 
 }

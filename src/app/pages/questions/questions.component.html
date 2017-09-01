@@ -1,0 +1,47 @@
+<section id="home" class="home">
+	<div class="overlay overlay-min">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 ">
+					<h1 style="text-align: -webkit-center;">
+						<img src="assets/images/logoconcilia.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
+					</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section id="choose" class="choose">
+	<div class="container">
+		<div class="row">
+			<div class="main_choose sections">
+				<div class="col-sm-12">
+					<div class="head_title">
+						<h3 style="font-size: 3rem;">PERGUNTAS FREQUENTES</h3>
+						<div class="separator"></div>
+					</div>
+					<div class="single_choose">
+						<div class="single_choose_acording">
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default" *ngFor="let item of questions; let p=index">
+									<div class="panel-heading" role="tab" [attr.id]="'heading-' + item.id">
+										<h4 class="panel-title">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" [attr.href]="'#collapse-' + item.id" aria-expanded="false" [attr.aria-controls]="'collapse-' + item.id" class="collapsed">
+												<i class="fa fa-question-circle-o" aria-hidden="true"></i> {{item.question}}
+											</a>
+										</h4>
+									</div>
+									<div [attr.id]="'collapse-' + item.id" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading-' + item.id" aria-expanded="false" style="height: 0px;">
+										<div class="panel-body">
+											{{item.answer}}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
