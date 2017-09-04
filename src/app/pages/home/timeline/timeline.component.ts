@@ -34,7 +34,6 @@ export class TimelineComponent implements OnInit {
 					image: '',
 					legend_image: ''
 				};
-				console.log(response.length);
 				const decimal = (response.length / 4) % 1;
 				if (decimal === 0) {
 					this.n_events = this.utils.range(0, (response.length / 4) - 1);
@@ -51,7 +50,6 @@ export class TimelineComponent implements OnInit {
 						}
 					);
 				}
-				console.log(this.events);
 			})
 			.catch((error) => {
 				console.log(error);

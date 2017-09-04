@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Community } from '../../interface/community';
+import { CommunityService } from '../services/community.service';
 
 
 @Component({
@@ -8,28 +9,15 @@ import { Community } from '../../interface/community';
 })
 export class HeaderComponent implements OnInit {
 
-	public communities: Array<Community> = [
-		{
-			id: 1,
-			title: 'vila Bom Destino',
-			text: '',
-			lat: '',
-			lng: '',
-			slug: 'vila-bom-destino'
-		},
-		{
-			id: 2,
-			title: 'vila da Luz',
-			text: '',
-			lat: '',
-			lng: '',
-			slug: 'vila-da-luz'
-		}
-	];
+	public communities: Array<Community> = [];
 
-	constructor() {}
+	constructor(private communityService: CommunityService) {}
 
 	ngOnInit() {
+		this.communityService.getAll()
+			.then((response) => {
+				this.communities = response;
+			});
 	}
 
 }

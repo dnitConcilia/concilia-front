@@ -14,6 +14,7 @@ import { HomeModule } from './pages/home/home.module';
 import { ROUTES } from './app.routes';
 import { DocumentService } from './services/document.service';
 import { TokenService } from './services/token.service';
+import { CommunityService } from './services/community.service';
 
 @NgModule({
 	declarations: [
@@ -30,8 +31,9 @@ import { TokenService } from './services/token.service';
 		HomeModule
 	],
 	providers: [
-		DocumentService,
-		TokenService
+		TokenService,
+		CommunityService,
+		DocumentService
 	],
 	bootstrap: [AppComponent]
 })

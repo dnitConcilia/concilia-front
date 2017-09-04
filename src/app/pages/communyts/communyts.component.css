@@ -2840,3 +2840,19 @@ only screen and (max-device-width: 500px) {
 .service .nav-tabs>li>a {
     width: 250px;
 }
+.separator {
+	height: 1px;
+	width: 50%;
+	margin: 20px 0px;
+	background: #444;
+	position: relative;
+}
+.separator:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 50%;
+	background: #ff7200;
+	content: "";
+}
