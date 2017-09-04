@@ -16,7 +16,7 @@
 		<div class="row">
 			<div class="main_choose sections">
 				<div class="col-sm-12">
-					<div class="head_title">
+					<div class="head_title" style="margin-bottom: 50px;">
 						<h3 style="font-size: 3rem;">PERGUNTAS FREQUENTES</h3>
 						<div class="separator"></div>
 					</div>
@@ -33,7 +33,7 @@
 									</div>
 									<div [attr.id]="'collapse-' + item.id" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading-' + item.id" aria-expanded="false" style="height: 0px;">
 										<div class="panel-body">
-											{{item.answer}}
+											<p style="font-size: 1.24rem;">{{item.answer}}</p>
 										</div>
 									</div>
 								</div>

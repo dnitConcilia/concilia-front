@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router, NavigationEnd} from '@angular/router';
 
 import { BASE_URL } from '../../config';
 
@@ -18,8 +18,22 @@ export class CommunityDetailComponent implements OnInit {
 
 	constructor(
 		private communityService: CommunityService,
+		private router: Router,
 		private activatedRoute: ActivatedRoute
-	) {}
+	) {
+		router.events.subscribe((val) => {
+			if (val instanceof NavigationEnd) {
+				this.communityService.getBySlug(this.activatedRoute.snapshot.params['slug'])
+					.then((response) => {
+						response.image = this.apiUrl + response.image;
+						this.community = response;
+					})
+					.catch((error) => {
+						console.log(error);
+					});
+			}
+		});
+	}
 
 	ngOnInit() {
 		this.communityService.getBySlug(this.activatedRoute.snapshot.params['slug'])
