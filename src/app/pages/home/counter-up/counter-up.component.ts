@@ -40,7 +40,6 @@ export class CounterUpComponent implements OnInit {
 		const oTop = $('#counter').offset().top - window.innerHeight / 2;
 		let a = 0;
 		if (a === 0 && number > oTop) {
-			// a = 1;
 			$('.count').each(function() {
 				const $this = $(this);
 				const countTo = $this.attr('data-count');
@@ -63,12 +62,6 @@ export class CounterUpComponent implements OnInit {
 					});
 			});
 		}
-		// else if (a === 0 && number < oTop) {
-		// 	$('.count').each(function() {
-		// 		const $this = $(this);
-		// 		$this.text(0);
-		// 	});
-		// }
 	}
 
 	ngOnInit() {}
