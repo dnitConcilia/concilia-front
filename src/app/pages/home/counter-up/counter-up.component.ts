@@ -13,19 +13,23 @@ export class CounterUpComponent implements OnInit {
 	public counters: Array<CounterInterface> = [
 		{
 			num: 123,
-			text: 'Famílias no aluguel social'
+			text: 'Famílias no aluguel social',
+			image: 'assets/images/amarelo2.png'
 		},
 		{
 			num: 1385,
-			text: 'Moradias seladas'
+			text: 'Moradias seladas',
+			image: 'assets/images/azul2.png'
 		},
 		{
 			num: 1151,
-			text: 'Imóveis prospectados'
+			text: 'Imóveis prospectados',
+			image: 'assets/images/magenta2.png'
 		},
 		{
 			num: 108,
-			text: 'Indenizações concluídas'
+			text: 'Indenizações concluídas',
+			image: 'assets/images/verde2.png'
 		}
 	];
 	constructor() {}
@@ -36,7 +40,7 @@ export class CounterUpComponent implements OnInit {
 		const oTop = $('#counter').offset().top - window.innerHeight / 2;
 		let a = 0;
 		if (a === 0 && number > oTop) {
-			a = 1;
+			// a = 1;
 			$('.count').each(function() {
 				const $this = $(this);
 				const countTo = $this.attr('data-count');
@@ -58,12 +62,13 @@ export class CounterUpComponent implements OnInit {
 
 					});
 			});
-		} else if (a === 0 && number < oTop) {
-			$('.count').each(function() {
-				const $this = $(this);
-				$this.text(0);
-			});
 		}
+		// else if (a === 0 && number < oTop) {
+		// 	$('.count').each(function() {
+		// 		const $this = $(this);
+		// 		$this.text(0);
+		// 	});
+		// }
 	}
 
 	ngOnInit() {}
