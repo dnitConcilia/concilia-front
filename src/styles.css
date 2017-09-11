@@ -1313,8 +1313,8 @@ button.btn-md:hover {
 
 /* Carousel */
 .testimonial{
-    background: url(assets/images/testbg.jpg) no-repeat center center;
-    background-size: cover;
+    background: #bdc3c7;
+    /*background-size: cover;*/
 }
 .main_testimonial {
     color:#fff;

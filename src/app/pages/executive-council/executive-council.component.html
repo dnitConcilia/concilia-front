@@ -66,17 +66,23 @@
 						<tr>
 							<th class="font-124">Título</th>
 							<th class="font-124">Descrição</th>
-							<th class="font-124">Data</th>
-							<th class="text-center font-124">Documento</th>
+							<th class="text-center font-124">Data</th>
+							<th class="text-center font-124">Apresentação</th>
+							<th class="text-center font-124">PDF</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td class="font-124">4ª REUNIÃO COE - PPT</td>
-							<td class="font-124"></td>
-							<td class="font-124">10 de Agosto de 2017</td>
+						<tr *ngFor="let meeting of meetings">
+							<td class="font-124">{{meeting.title}}</td>
+							<td class="font-124" style="width:300px;">{{meeting.description}}</td>
+							<td class="text-center font-124">{{meeting.date | humanizeDate}}</td>
 							<td class="text-center font-124">
-								<a target="_blank" href="/media/ata_reuniao/2017/08/04/4%C2%AA_REUNIAO_COE.pptx">
+								<a target="_blank" href="{{meeting.ppt}}">
+									<i class="fa fa-file-powerpoint-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+								</a>
+							</td>
+							<td class="text-center font-124">
+								<a target="_blank" href="{{meeting.pdf}}">
 									<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>
 								</a>
 							</td>
