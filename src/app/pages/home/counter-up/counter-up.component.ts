@@ -2,7 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { CounterInterface } from './counter.interface';
 
 declare var $: any;
-declare var jQuery:any;
+declare var jQuery: any;
 
 @Component({
 	selector: 'cba-counter-up',
@@ -12,24 +12,28 @@ export class CounterUpComponent implements OnInit {
 
 	public counters: Array<CounterInterface> = [
 		{
-			num: 123,
+			num: 119,
 			text: 'Famílias no aluguel social',
-			image: 'assets/images/amarelo2.png'
+			image: 'assets/images/amarelo2.png',
+			info: 'Termo de acordo'
 		},
 		{
-			num: 1385,
+			num: 1354,
 			text: 'Moradias seladas',
-			image: 'assets/images/azul2.png'
+			image: 'assets/images/azul2.png',
+			info: 'Termo de acordo'
 		},
 		{
 			num: 1151,
 			text: 'Imóveis prospectados',
-			image: 'assets/images/magenta2.png'
+			image: 'assets/images/magenta2.png',
+			info: 'Banco de imóveis'
 		},
 		{
 			num: 108,
 			text: 'Indenizações concluídas',
-			image: 'assets/images/verde2.png'
+			image: 'assets/images/verde2.png',
+			info: 'Balanço final'
 		}
 	];
 	constructor() {}
