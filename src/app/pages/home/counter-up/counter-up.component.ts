@@ -40,7 +40,7 @@ export class CounterUpComponent implements OnInit {
 
 	@HostListener('window:scroll', [])
 	onWindowScroll() {
-		const number = document.body.scrollTop;
+		const number = $(document).scrollTop();
 		const oTop = $('#counter').offset().top - window.innerHeight / 2;
 		let a = 0;
 		if (a === 0 && number > oTop) {
