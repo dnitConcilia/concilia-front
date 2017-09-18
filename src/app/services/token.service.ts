@@ -14,7 +14,9 @@ export class TokenService {
 
 	constructor(private http: Http) {
 		this.headers = new Headers (
-			{'Content-Type': 'application/json'}
+			{
+				'Content-Type': 'application/json'
+			}
 		);
 		this.login();
 	}

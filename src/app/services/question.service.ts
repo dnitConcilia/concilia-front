@@ -65,7 +65,7 @@ export class QuestionService implements DaoInterface<Question> {
 	private handleError(error: any): Promise<object> {
 		return Promise.reject({
 			'data': null,
-			'message': JSON.parse(error._body),
+			'message': JSON.parse(JSON.stringify(error._body)),
 			'success': false,
 			'token': localStorage.getItem('token')
 		});
