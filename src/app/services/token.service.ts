@@ -1,11 +1,6 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
-
-=======
-import { Http, Headers, Response } from '@angular/http';
 import {CookieService} from 'angular2-cookie/core';
->>>>>>> 56414caa236a83755bada8a55142d4f73c107074
 import { BASE_URL } from '../config';
 import { ResponseResult } from '../../interface/response-result';
 import { Token } from '../../interface/token';
