@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { API_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
@@ -12,22 +12,24 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class MeetingService implements DaoInterface<Meeting> {
 
-	private headers: Headers;
+	// private headers: Headers;
+	private options: RequestOptions;
 
 	constructor(
 		private http: Http
 	) {
-		this.headers = new Headers (
+		let headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json',
 				'Authorization': 'token ' + localStorage.getItem('token')
 			}
 		);
+		this.options = new RequestOptions({ headers: headers, withCredentials: true });
 	}
 
 	getAll(): Promise<Array<Meeting>> {
 		const url = API_URL + 'meeting/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Array<Meeting>)
 				.catch(this.handleError);
@@ -35,35 +37,35 @@ export class MeetingService implements DaoInterface<Meeting> {
 
 	getById(id: number): Promise<Meeting> {
 		const url = API_URL + 'meeting/' + id + '/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Meeting)
 				.catch(this.handleError);
 	}
 	getByCategory(category: string): Promise<Array<Meeting>> {
 		const url = API_URL + 'meeting-category/' + category + '/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Meeting)
 				.catch(this.handleError);
 	}
 	create(object: Meeting): Promise<Meeting> {
 		const url = API_URL + 'meeting/';
-		return this.http.post(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.post(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Meeting)
 				.catch(this.handleError);
 	}
 	update(object: Meeting): Promise<Meeting> {
 		const url = API_URL + 'meeting/' + object.id + '/';
-		return this.http.put(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.put(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Meeting)
 				.catch(this.handleError);
 	}
 	delete(id: number): Promise<Meeting> {
 		const url = API_URL + 'meeting/' + id + '/';
-		return this.http.delete(url, {headers: this.headers})
+		return this.http.delete(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Meeting)
 				.catch(this.handleError);

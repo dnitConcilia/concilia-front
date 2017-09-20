@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 
 import { BASE_URL } from '../config';
 import { ResponseResult } from '../../interface/response-result';
@@ -10,14 +10,16 @@ export class TokenService {
 
 	private username = 'concilia-front';
 	private password = 'consumir-dados';
-	private headers: Headers;
+	// private headers: Headers;
+	private options: RequestOptions;
 
 	constructor(private http: Http) {
-		this.headers = new Headers (
+		let headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json'
 			}
 		);
+		this.options = new RequestOptions({ headers: headers, withCredentials: true });
 		this.login();
 	}
 
@@ -27,7 +29,7 @@ export class TokenService {
 			'username': this.username,
 			'password': this.password
 		};
-		this.http.post(url, JSON.stringify(body), {headers: this.headers})
+		this.http.post(url, JSON.stringify(body), this.options)
 			.toPromise()
 			.then((response: Response) => {
 				let resp = response.json();
