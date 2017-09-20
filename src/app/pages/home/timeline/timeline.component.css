@@ -139,3 +139,20 @@ body {
 .tl-item:hover .tl-year {
 	display: none;
 }
+
+.separator {
+	height: 1px;
+	width: 300px;
+	margin: 20px 0px;
+	background: #fff;
+	position: relative;
+}
+.separator:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100px;
+	background: #ff7200;
+	content: "";
+}

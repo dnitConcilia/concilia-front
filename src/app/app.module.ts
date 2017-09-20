@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
 
+import { CookieService } from 'angular2-cookie/services/cookies.service';
+
 import { HeaderComponent } from './header/header.component';
 import { PreLoaderComponent } from './pre-loader/pre-loader.component';
 import { FooterComponent } from './footer/footer.component';
@@ -31,6 +33,7 @@ import { CommunityService } from './services/community.service';
 		HomeModule
 	],
 	providers: [
+		CookieService,
 		TokenService,
 		CommunityService,
 		DocumentService

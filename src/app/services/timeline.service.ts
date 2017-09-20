@@ -68,8 +68,8 @@ export class TimelineService implements DaoInterface<Timeline> {
 		return Promise.reject({
 			'data': null,
 			'message': JSON.parse(JSON.stringify(error._body)),
-			'success': false,
-			'token': localStorage.getItem('token')
+			'success': false
+			// 'token': localStorage.getItem('token')
 		});
 	}
 
