@@ -5,8 +5,8 @@ jQuery(document).ready(function ($) {
 	$(window).load(function () {
 		setTimeout(function () {
 			$(".loaded").fadeOut();
-			$(".preloader").delay(1000).fadeOut("slow");
-		}, 1500);
+			$(".preloader").delay(800).fadeOut("slow");
+		}, 1000);
 	});
 	/*---------------------------------------------*
 	 * Mobile menu

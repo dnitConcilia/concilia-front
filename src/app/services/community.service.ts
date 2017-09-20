@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import {CookieService} from 'angular2-cookie/core';
 import { API_URL, BASE_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
@@ -15,7 +16,8 @@ export class CommunityService implements DaoInterface<Community> {
 	private headers: Headers;
 
 	constructor(
-		private http: Http
+		private http: Http,
+		private _cookieService: CookieService
 	) {
 		this.headers = new Headers (
 			{
@@ -30,7 +32,20 @@ export class CommunityService implements DaoInterface<Community> {
 		return this.http.get(url, {headers: this.headers})
 				.toPromise()
 				.then(response => response.json() as Array<Community>)
-				.catch(this.handleError);
+				.catch((error: Response) => {
+					if (error.status === 401 && this._cookieService.get('wasReload') === undefined) {
+						this._cookieService.put('wasReload', '1');
+						location.reload();
+
+					} else {
+						console.log({
+							'data': null,
+							'message': error,
+							'success': false
+							// 'token': localStorage.getItem('token')
+						});
+					}
+				});
 	}
 
 	getById(id: number): Promise<Community> {
@@ -133,8 +148,8 @@ export class CommunityService implements DaoInterface<Community> {
 		return Promise.reject({
 			'data': null,
 			'message': JSON.parse(JSON.stringify(error._body)),
-			'success': false,
-			'token': localStorage.getItem('token')
+			'success': false
+			// 'token': localStorage.getItem('token')
 		});
 	}
 

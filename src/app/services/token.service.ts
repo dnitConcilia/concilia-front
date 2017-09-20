@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
-
+import {CookieService} from 'angular2-cookie/core';
 import { BASE_URL } from '../config';
 import { ResponseResult } from '../../interface/response-result';
 import { Token } from '../../interface/token';
@@ -12,7 +12,10 @@ export class TokenService {
 	private password = 'consumir-dados';
 	private headers: Headers;
 
-	constructor(private http: Http) {
+	constructor(
+		private http: Http,
+		private _cookieService: CookieService
+	) {
 		this.headers = new Headers (
 			{
 				'Content-Type': 'application/json'
@@ -30,18 +33,26 @@ export class TokenService {
 		this.http.post(url, JSON.stringify(body), {headers: this.headers})
 			.toPromise()
 			.then((response: Response) => {
-				let resp = response.json();
+				const resp = response.json();
 				localStorage.setItem('token', resp.token);
 			})
-			.catch(this.handleError);
+			.catch((error: Response) => {
+				if (error.status === 401 && this._cookieService.get('wasReload') === undefined) {
+					this._cookieService.put('wasReload', '1');
+					location.reload();
+
+				} else {
+					console.log({
+						'data': null,
+						'message': error,
+						'success': false
+						// 'token': localStorage.getItem('token')
+					});
+				}
+			});
 	}
 
-	private handleError(error: any): Promise<object> {
-		return Promise.reject({
-			'data': null,
-			'message': JSON.parse(error._body),
-			'success': false,
-			'token': localStorage.getItem('token')
-		});
-	}
+	// private handleError(error: any): Promise<object> {
+	// 	return Promise.reject();
+	// }
 }
