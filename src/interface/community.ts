@@ -1,3 +1,6 @@
+
+import { CommunityPhoto } from './community-photo';
+
 export interface Community {
 	id: number;
 	title: string;
@@ -9,4 +12,5 @@ export interface Community {
 	lat: string;
 	lng: string;
 	slug: string;
+	photos: Array<CommunityPhoto>;
 }

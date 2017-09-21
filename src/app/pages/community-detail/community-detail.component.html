@@ -24,8 +24,7 @@
                         <div class="col-sm-6">
 							<img alt="" src="{{community?.image}}">
                         </div><br>
-                        <div class="col-sm-6">
-                            <p class="font-124">{{community?.text}}</p>
+                        <div class="col-sm-6 p-text" [innerHTML]="community?.text" style="font-size: 1.24rem">
                         </div>
                     </div>
                 </div>
