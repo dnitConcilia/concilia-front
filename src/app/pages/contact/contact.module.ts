@@ -8,6 +8,7 @@ import { ContactComponent } from './contact.component';
 import { ComponentsModule } from '../../components/components.module';
 
 import { ROUTES } from './contact.routes';
+import { ContactService } from '../../services/contact.service';
 
 @NgModule({
 	imports: [
@@ -16,6 +17,9 @@ import { ROUTES } from './contact.routes';
 		RouterModule.forChild(ROUTES),
 		ComponentsModule
 	],
-	declarations: [ContactComponent]
+	declarations: [ContactComponent],
+	providers: [
+		ContactService
+	]
 })
 export class ContactModule { }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { API_URL } from '../config';
+import { API_URL, BASE_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
 import { Meeting } from '../../interface/meeting';
@@ -31,7 +31,15 @@ export class MeetingService implements DaoInterface<Meeting> {
 		const url = API_URL + 'meeting/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Array<Meeting>)
+				.then(response => {
+					const resp = response.json() as Array<Meeting>;
+
+					for (let i = 0; i < resp.length; i++) {
+						resp[i].pdf = BASE_URL + resp[i].pdf;
+						resp[i].ppt = BASE_URL + resp[i].ppt;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 
@@ -39,14 +47,29 @@ export class MeetingService implements DaoInterface<Meeting> {
 		const url = API_URL + 'meeting/' + id + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Meeting)
+				.then(response => {
+					const resp = response.json() as Meeting;
+					resp.pdf = BASE_URL + resp.pdf;
+					resp.ppt = BASE_URL + resp.ppt;
+
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	getByCategory(category: string): Promise<Array<Meeting>> {
 		const url = API_URL + 'meeting-category/' + category + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Meeting)
+				.then(response => {
+					const resp = response.json() as Array<Meeting>;
+
+					for (let i = 0; i < resp.length; i++) {
+						resp[i].pdf = BASE_URL + resp[i].pdf;
+						resp[i].ppt = BASE_URL + resp[i].ppt;
+					}
+
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	create(object: Meeting): Promise<Meeting> {

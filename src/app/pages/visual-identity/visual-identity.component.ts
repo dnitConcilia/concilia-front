@@ -15,6 +15,7 @@ export class VisualIdentityComponent implements OnInit {
 	ngOnInit() {
 		this.docService.getById(2)
 			.then((response) => {
+				console.log(response);
 				this.docVisualIdentity = response.document;
 			})
 			.catch((error) => {

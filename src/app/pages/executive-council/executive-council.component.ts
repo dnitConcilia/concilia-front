@@ -5,7 +5,7 @@ import { MeetingService } from '../../services/meeting.service';
 
 import { Meeting } from '../../../interface/meeting';
 
-import { STATIC_URL } from '../../config';
+import { BASE_URL } from '../../config';
 
 @Component({
 	selector: 'cba-executive-council',

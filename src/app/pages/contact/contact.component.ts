@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../../interface/contact';
-
+import { ContactService } from '../../services/contact.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
 	selector: 'cba-contact',
@@ -9,7 +10,10 @@ import { Contact } from '../../../interface/contact';
 })
 export class ContactComponent implements OnInit {
 
+	public success: boolean = false;
+	public error: boolean = false;
 	public contact: Contact = {
+		id: 0,
 		name: '',
 		lastName: '',
 		email: '',
@@ -17,13 +21,24 @@ export class ContactComponent implements OnInit {
 		message: ''
 	};
 
-	constructor() { }
+	constructor(
+		private contactService: ContactService
+	) { }
 
 	ngOnInit() {
 	}
 
-	public onSubmit(): void {
+	public onSubmit(form: NgForm): void {
 		console.log(this.contact);
+		this.contactService.create(this.contact)
+			.then((response) => {
+				this.success = true;
+				form.resetForm();
+			})
+			.catch((err) => {
+				this.error = true;
+			});
+
 	}
 	public getFormGroupClass(isValid: boolean, isPristine: boolean): Object {
 		return {
