@@ -17,12 +17,12 @@ export class TokenService {
 		private http: Http,
 		private _cookieService: CookieService
 	) {
-		let headers: Headers = new Headers (
+		const headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json'
 			}
 		);
-		this.options = new RequestOptions({ headers: headers, withCredentials: true });
+		this.options = new RequestOptions({ headers: headers, withCredentials: false });
 		this.login();
 	}
 

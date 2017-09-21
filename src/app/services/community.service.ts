@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import {CookieService} from 'angular2-cookie/core';
 import { API_URL, BASE_URL } from '../config';
@@ -13,23 +13,25 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class CommunityService implements DaoInterface<Community> {
 
-	private headers: Headers;
+	// private headers: Headers;
+	private options: RequestOptions;
 
 	constructor(
 		private http: Http,
 		private _cookieService: CookieService
 	) {
-		this.headers = new Headers (
+		const headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json',
 				'Authorization': 'token ' + localStorage.getItem('token')
 			}
 		);
+		this.options = new RequestOptions({ headers: headers, withCredentials: true });
 	}
 
 	getAll(): Promise<Array<Community>> {
 		const url = API_URL + 'community/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Array<Community>)
 				.catch((error: Response) => {
@@ -50,35 +52,35 @@ export class CommunityService implements DaoInterface<Community> {
 
 	getById(id: number): Promise<Community> {
 		const url = API_URL + 'community/' + id + '/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Community)
 				.catch(this.handleError);
 	}
 	getBySlug(slug: number): Promise<Community> {
 		const url = API_URL + 'community-slug/' + slug + '/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Community)
 				.catch(this.handleError);
 	}
 	create(object: Community): Promise<Community> {
 		const url = API_URL + 'community/';
-		return this.http.post(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.post(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Community)
 				.catch(this.handleError);
 	}
 	update(object: Community): Promise<Community> {
 		const url = API_URL + 'community/' + object.id + '/';
-		return this.http.put(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.put(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Community)
 				.catch(this.handleError);
 	}
 	delete(id: number): Promise<Community> {
 		const url = API_URL + 'community/' + id + '/';
-		return this.http.delete(url, {headers: this.headers})
+		return this.http.delete(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Community)
 				.catch(this.handleError);

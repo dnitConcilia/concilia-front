@@ -17,7 +17,7 @@ export class TimelineService implements DaoInterface<Timeline> {
 	constructor(
 		private http: Http
 	) {
-		let headers: Headers = new Headers (
+		const headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json',
 				'Authorization': 'token ' + localStorage.getItem('token')
@@ -25,7 +25,7 @@ export class TimelineService implements DaoInterface<Timeline> {
 		);
 		this.options = new RequestOptions({ headers: headers, withCredentials: true });
 	}
-	
+
 	getAll(): Promise<Array<Timeline>> {
 		const url = API_URL + 'timeline/';
 

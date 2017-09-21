@@ -17,7 +17,7 @@ export class DocumentService implements DaoInterface<Document> {
 	constructor(
 		private http: Http
 	) {
-		let headers: Headers = new Headers (
+		const headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json',
 				'Authorization': 'token ' + localStorage.getItem('token')
