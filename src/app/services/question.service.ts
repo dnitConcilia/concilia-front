@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response } from '@angular/http';
+import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { API_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
@@ -12,22 +12,24 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class QuestionService implements DaoInterface<Question> {
 
-	private headers: Headers;
+	// private headers: Headers;
+	private options: RequestOptions;
 
 	constructor(
 		private http: Http
 	) {
-		this.headers = new Headers (
+		let headers: Headers = new Headers (
 			{
 				'Content-Type': 'application/json',
 				'Authorization': 'token ' + localStorage.getItem('token')
 			}
 		);
+		this.options = new RequestOptions({ headers: headers, withCredentials: true });
 	}
 
 	getAll(): Promise<Array<Question>> {
 		const url = API_URL + 'faq/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Array<Question>)
 				.catch(this.handleError);
@@ -35,28 +37,28 @@ export class QuestionService implements DaoInterface<Question> {
 
 	getById(id: number): Promise<Question> {
 		const url = API_URL + 'faq/' + id + '/';
-		return this.http.get(url, {headers: this.headers})
+		return this.http.get(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Question)
 				.catch(this.handleError);
 	}
 	create(object: Question): Promise<Question> {
 		const url = API_URL + 'faq/';
-		return this.http.post(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.post(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Question)
 				.catch(this.handleError);
 	}
 	update(object: Question): Promise<Question> {
 		const url = API_URL + 'faq/' + object.id + '/';
-		return this.http.put(url, JSON.stringify(object), {headers: this.headers})
+		return this.http.put(url, JSON.stringify(object), this.options)
 				.toPromise()
 				.then((response: Response) => response.json() as Question)
 				.catch(this.handleError);
 	}
 	delete(id: number): Promise<Question> {
 		const url = API_URL + 'faq/' + id + '/';
-		return this.http.delete(url, {headers: this.headers})
+		return this.http.delete(url, this.options)
 				.toPromise()
 				.then(response => response.json() as Question)
 				.catch(this.handleError);
