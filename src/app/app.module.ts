@@ -17,6 +17,7 @@ import { ROUTES } from './app.routes';
 import { DocumentService } from './services/document.service';
 import { TokenService } from './services/token.service';
 import { CommunityService } from './services/community.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
 	declarations: [
@@ -36,7 +37,8 @@ import { CommunityService } from './services/community.service';
 		CookieService,
 		TokenService,
 		CommunityService,
-		DocumentService
+		DocumentService,
+		DataService
 	],
 	bootstrap: [AppComponent]
 })

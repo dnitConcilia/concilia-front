@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Gallery } from '../../../interface/gallery';
+import { GalleryService } from '../../services/gallery.service';
+import { DataService } from '../../services/data.service';
+
 
 @Component({
 	selector: 'cba-medias',
@@ -7,9 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediasComponent implements OnInit {
 
-	constructor() { }
+	public galleries: Array<Gallery>;
+
+	constructor(
+		private router: Router,
+		private dataService: DataService,
+		private galleryService: GalleryService
+	) { }
 
 	ngOnInit() {
+		this.galleryService.getAll()
+			.then((response) => {
+				this.galleries = response;
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
+
+	public goGallery(object: Gallery) {
+		this.dataService.clean();
+		this.dataService.set(object);
+		this.router.navigate(['/acervo', object.slug]);
 	}
 
 }
