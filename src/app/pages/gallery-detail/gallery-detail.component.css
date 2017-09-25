@@ -14,12 +14,8 @@
 	background: #ff7200;
 	content: "";
 }
-.photo {
-	border: 10px solid;
-    border-top-color: #856036;
-    border-left-color: #5d4426;
-    border-bottom-color: #856036;
-    border-right-color: #5d4426;
+.photo, .video {
+	border: 2.5px solid #fff;
 }
 
 .gallery {
