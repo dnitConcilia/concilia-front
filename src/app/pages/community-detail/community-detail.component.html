@@ -31,4 +31,11 @@
             </div>
         </div>
     </div>
+	<div class="container-fluid">
+		<div class="row" style="margin-bottom:50px; ">
+			<div class="popup-gallery" style="text-align: center;">
+				<a *ngFor="let photo of community?.photos" href="{{photo?.image}}" [attr.title]="photo?.credit" [attr.description]="photo?.legend"><img class="photo" src="{{photo?.image}}" width="auto" height="300"></a>
+			</div>
+		</div>
+	</div>
 </section>
