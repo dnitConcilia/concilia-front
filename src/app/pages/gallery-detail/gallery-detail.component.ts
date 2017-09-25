@@ -39,7 +39,6 @@ export class GalleryDetailComponent implements OnInit {
 	ngOnInit() {
 		this.galleryService.getBySlug(this.activatedRoute.snapshot.params['slug'])
 			.then((response) => {
-				console.log(response);
 				this.gallery = response;
 				$('.popup-gallery').magnificPopup({
 					delegate: 'a',

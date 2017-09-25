@@ -33,7 +33,16 @@ export class CommunityService implements DaoInterface<Community> {
 		const url = API_URL + 'community/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Array<Community>)
+				.then((response) => {
+					const resp = response.json() as Array<Community>;
+
+					for (let i = 0; i < resp.length; i++) {
+						for (let j = 0; j < resp[i].photos.length; j++) {
+							resp[i].photos[j].image = BASE_URL + resp[i].photos[j].image;
+						}
+					}
+					return resp;
+				})
 				.catch((error: Response) => {
 					if (error.status === 401 && this._cookieService.get('wasReload') === undefined) {
 						this._cookieService.put('wasReload', '1');
@@ -54,14 +63,28 @@ export class CommunityService implements DaoInterface<Community> {
 		const url = API_URL + 'community/' + id + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Community)
+				.then((response) => {
+					const resp = response.json() as Community;
+
+					for (let j = 0; j < resp.photos.length; j++) {
+						resp.photos[j].image = BASE_URL + resp.photos[j].image;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	getBySlug(slug: number): Promise<Community> {
 		const url = API_URL + 'community-slug/' + slug + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Community)
+				.then((response) => {
+					const resp = response.json() as Community;
+
+					for (let j = 0; j < resp.photos.length; j++) {
+						resp.photos[j].image = BASE_URL + resp.photos[j].image;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	create(object: Community): Promise<Community> {
