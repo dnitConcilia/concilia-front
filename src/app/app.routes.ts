@@ -8,6 +8,7 @@ export const ROUTES: Routes = [
 	{path: 'identidade-visual', loadChildren: './pages/visual-identity/visual-identity.module#VisualIdentityModule'},
 	{path: 'acao-publica', loadChildren: './pages/civil-action/civil-action.module#CivilActionModule'},
 	{path: 'acervo', loadChildren: './pages/medias/medias.module#MediasModule'},
+	{path: 'acervo/:slug', loadChildren: './pages/gallery-detail/gallery-detail.module#GalleryDetailModule'},
 	{path: 'plano-providencias', loadChildren: './pages/action-plan/action-plan.module#ActionPlanModule'},
 	{path: 'criterios-regras', loadChildren: './pages/criteria/criteria.module#CriteriaModule'},
 	{path: 'comunidades', loadChildren: './pages/communyts/communyts.module#CommunytsModule'},

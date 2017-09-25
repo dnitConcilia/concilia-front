@@ -14,28 +14,10 @@
 <section id="portfolio" class="portfolio lightbg" style="padding-top:100px;padding-bottom:100px">
     <div class="container-fluid">
 		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<figure>
-					<img id="photo" src="/assets/images/embreve.png" alt="photo">
-					<figcaption id="caption">vila Pica Pau</figcaption>
-				</figure>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<figure>
-					<img id="photo" src="/assets/images/embreve.png" alt="photo">
-					<figcaption id="caption">vila da Paz</figcaption>
-				</figure>
-            </div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<figure>
-					<img id="photo" src="/assets/images/embreve.png" alt="photo">
-					<figcaption id="caption">vila da Luz</figcaption>
-				</figure>
-            </div>
-			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-				<figure>
-					<img id="photo" src="/assets/images/embreve.png" alt="photo">
-					<figcaption id="caption">vila Bom Destino</figcaption>
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let gallery of galleries">
+				<figure (click)='goGallery(gallery)' style="cursor:pointer;">
+					<img id="photo" src="{{gallery.face}}" alt="photo">
+					<figcaption id="caption">{{gallery.title}}</figcaption>
 				</figure>
             </div>
 		</div>

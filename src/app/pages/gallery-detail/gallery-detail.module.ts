@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule} from '@angular/router';
 
-import { ROUTES } from './medias.routes';
-import { MediasComponent } from './medias.component';
+import { GalleryDetailComponent } from './gallery-detail.component';
+import { ROUTES } from './gallery-detail.routes';
 import { GalleryService } from '../../services/gallery.service';
 
 @NgModule({
@@ -11,9 +11,11 @@ import { GalleryService } from '../../services/gallery.service';
 		CommonModule,
 		RouterModule.forChild(ROUTES),
 	],
-	declarations: [MediasComponent],
+	declarations: [
+		GalleryDetailComponent
+	],
 	providers: [
 		GalleryService
 	]
 })
-export class MediasModule { }
+export class GalleryDetailModule { }
