@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
-import { API_URL } from '../config';
+import { API_URL, BASE_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
 import { Gallery } from '../../interface/gallery';
@@ -32,7 +32,16 @@ export class GalleryService implements DaoInterface<Gallery> {
 		const url = API_URL + 'gallery/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Array<Gallery>)
+				.then((response) => {
+					const resp = response.json() as Array<Gallery>;
+
+					for (let i = 0; i < resp.length; i++) {
+						for (let j = 0; j < resp[i].photos.length; j++) {
+							resp[i].photos[j].photo = BASE_URL + resp[i].photos[j].photo;
+						}
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 
@@ -40,14 +49,28 @@ export class GalleryService implements DaoInterface<Gallery> {
 		const url = API_URL + 'gallery/' + id + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Gallery)
+				.then((response) => {
+					const resp = response.json() as Gallery;
+
+					for (let j = 0; j < resp.photos.length; j++) {
+						resp.photos[j].photo = BASE_URL + resp.photos[j].photo;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	getBySlug(slug: number): Promise<Gallery> {
 		const url = API_URL + 'gallery-slug/' + slug + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Gallery)
+				.then((response) => {
+					const resp = response.json() as Gallery;
+
+					for (let j = 0; j < resp.photos.length; j++) {
+						resp.photos[j].photo = BASE_URL + resp.photos[j].photo;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	create(object: Gallery): Promise<Gallery> {
