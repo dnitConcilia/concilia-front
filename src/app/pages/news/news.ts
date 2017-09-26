@@ -9,6 +9,7 @@ export interface News {
 	legendImage: string;
 	creditsImage: string;
 	author: string;
+	authorText: string;
 	noticeOrigin: string;
 	slug: string;
 	is_public: boolean;

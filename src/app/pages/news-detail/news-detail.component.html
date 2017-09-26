@@ -28,13 +28,28 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-12">
+				<span class="concilia-credit">
+					<i class="fa fa-user"></i>
+					&nbsp;&nbsp;{{news?.creditsImage}}
+				</span>
 				<img src="{{news?.image}}" alt="">
+				<span class="concilia-caption">
+					<i class="fa fa-camera"></i>
+					&nbsp;&nbsp;{{news?.legendImage}}
+				</span>
+
 			</div>
 		</div>
 		<div class="row" style="margin-top:50px; margin-bottom:50px">
 			<!-- Conteúdo da notícia sendo recebido como html e não como string -->
 			<div id="content-news" class="col-sm-12" [innerHTML]="news?.text" style="font-size: 1.24rem!important;"></div>
 			<!-- Fim do conteúdo da notícia -->
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				Data da notícia: {{news?.published_at | humanizeDate}} <br />
+				Texto de: {{news?.authorText}} <br />
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-4">

@@ -22,7 +22,15 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
+							<span class="concilia-credit">
+								<i class="fa fa-user"></i>
+								&nbsp;&nbsp;{{community?.credit}}
+							</span>
 							<img alt="" src="{{community?.image}}">
+							<span class="concilia-caption">
+								<i class="fa fa-camera"></i>
+								&nbsp;&nbsp;{{community?.caption}}
+							</span>
                         </div><br>
                         <div class="col-sm-6 p-text" [innerHTML]="community?.text" style="font-size: 1.24rem">
                         </div>
@@ -34,7 +42,7 @@
 	<div class="container-fluid">
 		<div class="row" style="margin-bottom:50px; ">
 			<div class="popup-gallery" style="text-align: center;">
-				<a *ngFor="let photo of community?.photos" href="{{photo?.image}}" [attr.title]="photo?.credit" [attr.description]="photo?.legend"><img class="photo" src="{{photo?.image}}" width="auto" height="300"></a>
+				<a *ngFor="let photo of community?.photos" href="{{photo?.image}}" [attr.title]="photo?.credit" [attr.description]="photo?.caption"><img class="photo" src="{{photo?.image}}" width="auto" height="300"></a>
 			</div>
 		</div>
 	</div>
