@@ -32,7 +32,7 @@
 					<i class="fa fa-user"></i>
 					&nbsp;&nbsp;{{news?.creditsImage}}
 				</span>
-				<img src="{{news?.image}}" alt="">
+				<img src="{{news?.image}}" alt="" style="width: inherit;">
 				<span class="concilia-caption">
 					<i class="fa fa-camera"></i>
 					&nbsp;&nbsp;{{news?.legendImage}}
@@ -46,7 +46,7 @@
 			<!-- Fim do conteúdo da notícia -->
 		</div>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12" style="font-size: 1.24rem">
 				Data da notícia: {{news?.published_at | humanizeDate}} <br />
 				Texto de: {{news?.authorText}} <br />
 			</div>
