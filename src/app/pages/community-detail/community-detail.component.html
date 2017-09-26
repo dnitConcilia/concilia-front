@@ -22,7 +22,15 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
+							<span class="concilia-credit">
+								<i class="fa fa-user"></i>
+								&nbsp;&nbsp;{{community?.credit}}
+							</span>
 							<img alt="" src="{{community?.image}}">
+							<span class="concilia-caption">
+								<i class="fa fa-camera"></i>
+								&nbsp;&nbsp;{{community?.caption}}
+							</span>
                         </div><br>
                         <div class="col-sm-6 p-text" [innerHTML]="community?.text" style="font-size: 1.24rem">
                         </div>
