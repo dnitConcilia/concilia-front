@@ -50,6 +50,15 @@ export class TimelineComponent implements OnInit {
 						}
 					);
 				}
+				// let i = 0;
+
+				// let items = $(".carousel-inner .item");
+				// $(items[i]).removeClass('active');
+				// $(items[i]).addClass('active');
+
+				// let indicators = $(".carousel-indicators");
+				// $(indicators[i]).removeClass('active');
+				// $(indicators[i]).addClass('active');
 			})
 			.catch((error) => {
 				console.log(error);
