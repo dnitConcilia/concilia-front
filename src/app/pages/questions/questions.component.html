@@ -22,26 +22,12 @@
 					</div>
 					<div class="main_about_area sections" style="padding-top:0;padding-bottom:50px;">
 						<div class="col-sm-12">
-							<p class="font-124">Você está procurando informações sobre o reassentamento humanizado na BR-381 Norte ou no Anel Rodoviário de Belo Horizonte? Veja se encontra a sua resposta na lista de perguntas frequentes abaixo: basta clicar na pergunta que vc terá a resposta. Caso prefira, entre contato com a nossa equipe pelo <a [routerLink]="['/contato']">Fale Conosco.</a></p>
+							<p class="font-124">Você está procurando informações sobre o reassentamento humanizado na BR-381 Norte ou no Anel Rodoviário de Belo Horizonte? Veja se encontra a sua resposta na lista de perguntas frequentes abaixo: basta clicar na pergunta que você terá a resposta. Caso prefira, entre contato com a nossa equipe pelo <a [routerLink]="['/contato']">Fale Conosco.</a></p>
 						</div>
 					</div>
 					<div class="single_choose">
 						<div class="single_choose_acording">
 							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-								<!-- <div class="panel panel-default" *ngFor="let item of questions; let p=index">
-									<div class="panel-heading" role="tab" [attr.id]="'heading-' + item.id">
-										<h4 class="panel-title">
-											<a role="button" data-toggle="collapse" data-parent="#accordion" [attr.href]="'#collapse-' + item.id" aria-expanded="true" [attr.aria-controls]="'collapse-' + item.id" class="collapsed">
-												<i class="fa fa-question-circle-o" aria-hidden="true"></i> {{item.question}}
-											</a>
-										</h4>
-									</div>
-									<div [attr.id]="'collapse-' + item.id" class="panel-collapse collapse in" role="tabpanel" [attr.aria-labelledby]="'heading-' + item.id" aria-expanded="true" style="">
-										<div class="panel-body">
-											<p style="font-size: 1.24rem;">{{item.answer}}</p>
-										</div>
-									</div> -->
 
 								<div class="panel panel-default" *ngFor="let item of questions; let isFirst = first">
 									<div *ngIf="isFirst == true" class="panel-heading" role="tab" [attr.id]="'heading-' + item.id">
@@ -69,6 +55,7 @@
 											<p style="font-size: 1.24rem;">{{item.answer}}</p>
 										</div>
 									</div>
+									
 								</div>
 							</div>
 						</div>
