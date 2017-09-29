@@ -4,6 +4,9 @@ import { TimelineService } from '../../../services/timeline.service';
 import { STATIC_URL } from '../../../config';
 import { Utils } from '../../../utils/utils';
 
+declare var $: any;
+declare var jQuery: any;
+
 @Component({
 	selector: 'cba-timeline',
 	templateUrl: './timeline.component.html',
@@ -50,19 +53,39 @@ export class TimelineComponent implements OnInit {
 						}
 					);
 				}
-				// let i = 0;
-
-				// let items = $(".carousel-inner .item");
-				// $(items[i]).removeClass('active');
-				// $(items[i]).addClass('active');
-
-				// let indicators = $(".carousel-indicators");
-				// $(indicators[i]).removeClass('active');
-				// $(indicators[i]).addClass('active');
 			})
 			.catch((error) => {
 				console.log(error);
 			});
+	}
+
+	public nextGroup(): void {
+		let indicators = $('.carousel-indicators li');
+		let i = parseInt($($('.carousel-indicators').find('.active')[0]).attr('data-slide-to'), 10);
+
+		if (i < this.n_events.length - 1) {
+			let items = $('.carousel-inner .item');
+			$(indicators[i]).removeClass('active');
+			$(indicators[i + 1]).addClass('active');
+
+			$(items[i + 1]).addClass('active');
+			$(items[i]).removeClass('active');
+
+		}
+	}
+
+	public backGroup(): void {
+		let indicators = $('.carousel-indicators li');
+		let i = parseInt($($('.carousel-indicators').find('.active')[0]).attr('data-slide-to'), 10);
+
+		if (i > 0) {
+			let items = $('.carousel-inner .item');
+			$(indicators[i]).removeClass('active');
+			$(indicators[i - 1]).addClass('active');
+
+			$(items[i - 1]).addClass('active');
+			$(items[i]).removeClass('active');
+		}
 	}
 
 }
