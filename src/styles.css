@@ -12,6 +12,13 @@ body {
     font-family: 'Raleway', sans-serif;
 	overflow-y: auto;
 }
+/*html {
+  overflow:   scroll;
+}*/
+/*::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}*/
 .preloader {
     position: fixed;
     top: 0;

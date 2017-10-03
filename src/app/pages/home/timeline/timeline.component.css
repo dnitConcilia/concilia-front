@@ -18,7 +18,7 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   position: relative;
-  width: 24.3%;
+  width: 22.5%;
   /*height: 100vh;*/
   height: 500px;
   color: #fff;
@@ -140,6 +140,10 @@ body {
 	display: none;
 }
 
+.carousel-inner .item {
+	text-align: center;
+}
+
 .separator {
 	height: 1px;
 	width: 300px;
@@ -155,4 +159,17 @@ body {
 	width: 100px;
 	background: #ff7200;
 	content: "";
+}
+
+.carousel .carousel-control {
+	width: 5%;
+}
+
+.carousel .carousel-control .left-icon,
+.carousel .carousel-control .right-icon {
+	position: absolute;
+    top: 42%;
+    z-index: 5;
+    display: inline-block;
+    margin-top: -10px;
 }
