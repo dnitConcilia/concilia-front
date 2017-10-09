@@ -13,5 +13,6 @@ export interface News {
 	noticeOrigin: string;
 	slug: string;
 	is_public: boolean;
+	is_formated: boolean;
 	expired_at: string;
 }
