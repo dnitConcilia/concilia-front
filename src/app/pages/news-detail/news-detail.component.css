@@ -40,3 +40,7 @@
 	background: #ff7200;
 	content: "";
 }
+.concilia-caption, .concilia-credit{
+	font-size: 0.875rem!important;
+	color: #444!important;
+}
