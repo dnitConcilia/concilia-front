@@ -1763,7 +1763,11 @@ h3 {
 }
 .concilia-credit {
 	float: right;
+	font-size: 0.875rem;
+	color: #444;
 }
 .concilia-caption {
 	font-weight: bolder;
+	font-size: 0.875rem!important;
+	color: #444;
 }
