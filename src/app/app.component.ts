@@ -15,7 +15,6 @@ export class AppComponent {
 	}
 
 	onDeactivate() {
-		// $('body').animate({ scrollTop: 0 }, 'slow');
-		document.body.scrollTop = 0;
+		window.scrollTo(0, 0)
 	}
 }

@@ -44,20 +44,19 @@
 										</ul>
 									</li>
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
-										<a [routerLink]="['/imoveis']">Imóveis</a>
-										<!-- <ul class="dropdown-content ul-submenu" style="right: auto;">
-											<li><a>Banco de imóveis</a></li>
-											<li><a>Localização dos imóveis</a></li>
-											<li><a>Características dos imóveis</a></li>
-											<li><a>Destinação dos imóveis</a></li>
-											<li><a>Acesso aos imóveis</a></li>
-										</ul> -->
+										<a class="dropbtn" style="cursor:pointer;">Imóveis</a>
+										<ul class="dropdown-content ul-submenu" style="right: auto;">
+											<li><a [routerLink]="['/imoveis']">Imóveis</a></li>
+											<!--<li><a [routerLink]="['/imoveis-documentacao']">Documentação</a></li>-->
+										</ul>
 									</li>
+
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
 										<a class="dropbtn" style="cursor:pointer;">Providências</a>
 										<ul class="dropdown-content ul-submenu" style="right: auto;">
 											<li><a [routerLink]="['/plano-providencias']">Plano de providências</a></li>
 											<li><a [routerLink]="['/criterios-regras']">Critérios e regras</a></li>
+											<!--<li><a [routerLink]="['/editais']">Editais</a></li>-->
 										</ul>
 									</li>
                                     <li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/noticias']">Notícias</a></li>
