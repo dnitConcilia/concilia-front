@@ -10,6 +10,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
 import { HeaderComponent } from './header/header.component';
 import { PreLoaderComponent } from './pre-loader/pre-loader.component';
 import { FooterComponent } from './footer/footer.component';
+import { WarningComponent } from './warning/warning.component';
 
 import { HomeModule } from './pages/home/home.module';
 
@@ -25,6 +26,7 @@ import { DataService } from './services/data.service';
 		HeaderComponent,
 		PreLoaderComponent,
 		FooterComponent,
+		WarningComponent
 	],
 	imports: [
 		BrowserModule,
