@@ -1,0 +1,9 @@
+.w100 {
+	width: 100%;
+}
+.item{
+	text-align: center;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img{
+	position: relative;
+}
