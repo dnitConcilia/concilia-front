@@ -1,6 +1,9 @@
 .font-124 {
 	font-size: 1.24rem;
 }
+.font2-3 {
+	font-size: 2.3rem!important;
+}
 .separator {
 	height: 1px;
 	width: 300px;
@@ -16,4 +19,15 @@
 	width: 100px;
 	background: #ff7200;
 	content: "";
+}
+.service .nav-tabs>li>a{
+    width: 255px;
+    height: 180px;
+}
+.service_tabe_menu.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus{
+    width:255px;
+    height: 180px;
+}
+.single_ab_mision li {
+	margin-bottom: 10px;
 }
