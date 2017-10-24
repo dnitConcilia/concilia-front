@@ -4,7 +4,7 @@
 			<div class="row">
 				<div class="col-sm-12 ">
 					<h1 style="text-align: -webkit-center;">
-						<img src="assets/images/banner_images/conselho.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
+						<img src="assets/images/logoconcilia.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
 					</h1>
 				</div>
 			</div>
@@ -25,60 +25,41 @@
 		</div>
 		<div class="row">
 			<div class="main_about_area sections" style="padding-top:0;padding-bottom:0;">
-				<div class="col-sm-6">
-					<span class="concilia-credit">
-						<i class="fa fa-user"></i>
-						&nbsp;&nbsp;Alexandre Dutra
-					</span>
-					<img src="assets/images/executive_concil.jpg" alt="" >
-					<span class="concilia-caption" style="margin-bottom:20px;">
-						<i class="fa fa-camera"></i>
-						&nbsp;&nbsp;Primeira reunião do Conselho Executivo na SREMG do DNIT.
-					</span>
-					<p class="font-124">Para minimizar os conflitos e facilitar o entendimento entre os diversos atores que compõem o Concilia BR-381 e Anel foi criado um Conselho Executivo, de caráter deliberativo, cuja principal função é buscar o consenso entre seus membros.</p>
+				<div class="col-sm-4">
+					<img src="assets/images/editais3.svg" alt="" >
 				</div>
-				<div class="col-sm-6">
-					<!-- <p class="font-124">Para minimizar os conflitos e facilitar o entendimento entre os diversos atores que compõem o Concilia BR-381 e Anel foi criado um Conselho Executivo, de caráter deliberativo, cuja principal função é buscar o consenso entre seus membros.</p> -->
-					<p class="font-124">O Conselho acompanha as diversas ações do programa e é responsável pelo gerenciamento do Plano de Providências. Do plano, elaborado pelo DNIT, constam as ações e soluções para viabilizar o reassentamento das famílias Concilia.</p>
-				<!-- </div>
-				<div class="col-sm-6"> -->
-					<p class="font-124">Foram estabelecidos critérios e regras que orientam e facilitam a execução do Programa em cada uma de suas etapas. Essas diretrizes foram elaboradas pelos parceiros, revisadas pelos membros do Conselho Executivo e homologadas pela Justiça Federal.</p>
-					<p class="font-124">O Conselho é composto por um representante de cada instituição parceira do Concilia BR-381 e Anel e suas reuniões se realizam na Superintendencia Regional do Estado de Minas Gerais(SREMG) periodicamente e em situações extraordinárias quando necessário.</p>
-					<p class="font-124">As deliberações do Conselho Executivo vão desde a conciliação e o cumprimento do Acordo Judicial homologado em juízo até a análise de casos excepcionais e decisões estratégicas.</p>
+				<div class="col-sm-8">
+					<p class="font-124">A implementação dos programas de desapropriação e o reassentamento requer a prestação de serviços bastante específicos: mudança e transporte dos objetos pessoais dos beneficiários, demolição das moradias, ealização de atividades de inclusão social; além do acompanhamento técnico e social.  No caso do Concilia BR 381 e Anel, são lançados no mercado editais de concorrência pública para atender à realização destes serviços.</p>
+
+					<p class="font-124">Os editais são publicados e vence a concorrência a empresa que oferecer o menor custo para a realização da atividade demandada. Clique aqui para conferir os editais que estão disponíveis e os que já foram publicados pelo Concilia BR-381 e Anel.</p>
 				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<a target="_blank" href="{{docExecCouncil}}">
-					<b>
-						 <h5 class="text-center" style="margin:50px"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>&nbsp;&nbsp;
-							Acesse o regimento do Conselho Executivo
-						</h5>
-					</b>
-				</a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="head_title" style="margin-bottom: 50px;">
-					<h3 style="font-size: 2rem;">Editais</h3>
-					<div class="separator"></div>
-				</div>
-			</div>
-		</div>
+		</div><br /><br />
 		<div class="row">
 			<div class="table-responsive" style="padding-bottom:50px">
 				<table class="table">
 					<thead>
 						<tr>
-							<th class="font-124">Título</th>
+							<th class="font-124">Data de publicação</th>
+							<th class="font-124">Data da abertura</th>
 							<th class="font-124">Descrição</th>
-							<th class="text-center font-124">Data</th>
-							<th class="text-center font-124">Edital</th>
+							<th class="font-124">Edital</th>
 						</tr>
 					</thead>
 					<tbody>
+						<tr>
+							<td class="font-124">01/09/2017</td>
+							<td class="font-124">15/09/2017</td>
+							<td class="font-124" style="width:60%;">Licitação de empresa apta ao transporte rodoviário de carga, em caminhão fechado tipo baú, incluindo o transporte de móveis, utensílios, vestuário, objetos e demais pertences das famílias a serem removidas para as suas novas moradias.</td>
+							<td class="text-center font-124">
+								<a target="_blank" href="{{notice.notice}}">
+									<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+								</a>
+								<a target="_blank" href="http://www1.dnit.gov.br/editais/consulta/resumo.asp?NUMIDEdital=6627#">
+									<i class="fa fa-external-link fa-2x" aria-hidden="true" style="color: #444;"></i>
+								</a>
+							</td>
+						</tr>
 						<tr *ngFor="let notice of notices">
 							<td class="font-124">{{notice.title}}</td>
 							<td class="font-124" style="width:300px;">{{notice.description}}</td>
@@ -86,6 +67,9 @@
 							<td class="text-center font-124">
 								<a target="_blank" href="{{notice.notice}}">
 									<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true" style="color: #444;"></i>
+								</a>
+								<a target="_blank" href="{{notice.notice}}">
+									<i class="fa fa-external-link fa-2x" aria-hidden="true" style="color: #444;"></i>
 								</a>
 							</td>
 						</tr>
