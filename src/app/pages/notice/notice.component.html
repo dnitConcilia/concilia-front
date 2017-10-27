@@ -48,8 +48,8 @@
 					</thead>
 					<tbody>
 						<tr *ngFor="let noticeConc of noticesConcorrencia">
-							<td class="font-124">{{noticeConc.title}}</td>
-							<td class="text-center font-124">{{noticeConc.date | humanizeDate}}</td>
+							<td class="font-124">{{noticeConc.publishDate | humanizeDate}}</td>
+							<td class="font-124">{{noticeConc.date | humanizeDate}}</td>
 							<td class="font-124" style="width:300px;">{{noticeConc.description}}</td>
 							<td class="text-center font-124">
 								<a target="_blank" href="{{noticeConc.notice}}">
