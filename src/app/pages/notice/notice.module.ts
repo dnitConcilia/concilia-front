@@ -6,8 +6,8 @@ import { NoticeComponent } from './notice.component';
 
 import { PipesModule } from '../../pipes/pipes.module';
 
-import { MeetingService } from '../../services/meeting.service';
 import { ROUTES } from './notice.routes';
+import { NoticeService } from '../../services/notice.service';
 
 @NgModule({
 	imports: [
@@ -17,7 +17,7 @@ import { ROUTES } from './notice.routes';
 	],
 	declarations: [NoticeComponent],
 	providers: [
-		MeetingService
+		NoticeService
 	]
 })
 export class NoticeModule { }

@@ -19,6 +19,7 @@ import { DocumentService } from './services/document.service';
 import { TokenService } from './services/token.service';
 import { CommunityService } from './services/community.service';
 import { DataService } from './services/data.service';
+import { WarningService } from './services/warning.service';
 
 @NgModule({
 	declarations: [
@@ -40,7 +41,8 @@ import { DataService } from './services/data.service';
 		TokenService,
 		CommunityService,
 		DocumentService,
-		DataService
+		DataService,
+		WarningService
 	],
 	bootstrap: [AppComponent]
 })

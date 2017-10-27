@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MeetingService } from '../../services/meeting.service';
-
-import { Meeting } from '../../../interface/meeting';
-
 import { BASE_URL } from '../../config';
+import { Notice } from '../../../interface/notice';
+import { NoticeService } from '../../services/notice.service';
 
 @Component({
 	selector: 'cba-notice',
@@ -13,16 +11,22 @@ import { BASE_URL } from '../../config';
 })
 export class NoticeComponent implements OnInit {
 
-	public notices: Array<Meeting>;
+	public notices: Array<Notice>;
+	public noticesConcorrencia: Array<Notice> = [];
 
 	constructor(
-		private meetingService: MeetingService
+		private noticeService: NoticeService
 	) { }
 
 	ngOnInit() {
-		this.meetingService.getByCategory('edital')
+		this.noticeService.getAll()
 			.then((response) => {
 				this.notices = response;
+				for (let i = 0; i < response.length; i++) {
+					if (response[i].noticeType.name === 'Concorrência pública') {
+						this.noticesConcorrencia.push(response[i]);
+					}
+				}
 			})
 			.catch((error) => {
 				console.log(error);
