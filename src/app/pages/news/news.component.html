@@ -1,36 +1,92 @@
 <section id="home" class="home">
-    <div class="overlay overlay-min">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 ">
+	<div class="overlay overlay-min">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 ">
 					<h1 style="text-align: -webkit-center;">
 						<img src="assets/images/banner_images/NOTICIAS.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
 					</h1>
-	            </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <section id="portfolio" class="portfolio lightbg" style="padding-top:100px;padding-bottom:100px">
-    <div class="container-fluid">
-        <div class="row">
-                <div class="col-sm-6">
-                    <div class="head_title" style="margin-left:15px;">
-                        <h3 class="font-3rem">Notícias</h3>
-                        <div class="separator"></div>
-                    </div>
-                </div>
+	<div class="container-fluid">
+		<div class="row">
+				<div class="col-sm-6">
+					<div class="head_title" style="margin-left:15px;">
+						<h3 class="font-3rem">Notícias</h3>
+						<div class="separator"></div>
+					</div>
+				</div>
 		</div>
 		<div class="row">
-			<div *ngFor="let item of news" class="col-sm-4 bcards" >
-				<div class="view view-first">
-				  <img style="width:500px; height:300px" src="{{item.image}}" />
-				  <div class="mask">
-					<h2>{{item.title}}</h2>
-					<a [routerLink]="['/noticias', item.slug]" class="info">Leia Mais...</a>
-				  </div>
+			<div class="col-sm-6 col-md-8 col-lg-9">
+				<div *ngFor="let item of news" class="col-sm-12 col-md-6 col-lg-4" >
+					<figure class="snip1208">
+						<img src="{{item.image}}" alt="sample66"/>
+						<div class="date"><span class="day">{{item.published_at | humanizeDate}}</span></div>
+						<figcaption>
+							<h3>{{item.title}}</h3>
+							<!-- <p>{{item.subTitle}}</p> -->
+							<button class="btn btn-block">Leia mais</button>
+						</figcaption><a [routerLink]="['/noticias', item.slug]"></a>
+					</figure>
 				</div>
-            </div>
+			</div><br />
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<div class="row">
+					<div class="head_title" style="margin-left:15px;margin-bottom:0px;">
+						<h3 style="font-size: x-large;">Categorias</h3>
+						<div class="separator" style="width: 200px;"></div>
+					</div>
+					<ul class='category-list' style="margin-left: 20px;font-size: large;">
+						<li><a class="font-444" [routerLink]="['/noticias']">Todas</a></li>
+						<li><a class="font-444" href="">Processo</a></li>
+						<li><a class="font-444" href="">Imóveis</a></li>
+						<li><a class="font-444" href="">Conselho Executivo</a></li>
+						<li><a class="font-444" href="">Outros</a></li>
+					</ul>
+				</div><br /><br /><br />
+				<div class="row">
+					<div class="head_title" style="margin-left:15px;margin-bottom:0px;">
+						<h3 style="font-size: x-large;">Mais acessadas</h3>
+						<div class="separator" style="width: 200px;"></div>
+					</div>
+	                <ul class='latest-news-list' style="margin-left: 15px;font-size: large;">
+	                    <li>
+							<a class="font-444" >
+								<i class="fa fa-newspaper-o"></i>
+								Conciliação garante aquisição de casa própria para moradores do anel
+							</a>
+						</li>
+	                    <li>
+							<a class="font-444" >
+								Casas novas para os moradores de áreas de risco na br 381
+							</a>
+						</li>
+						<li>
+							<a class="font-444" >
+								<i class="fa fa-newspaper-o"></i>
+								Casas novas para os moradores de áreas de risco na br 381
+							</a>
+						</li>
+						<li>
+							<a class="font-444" >
+								<i class="fa fa-newspaper-o"></i>
+								Casas novas para os moradores de áreas de risco na br 381
+							</a>
+						</li>
+						<li>
+							<a class="font-444" >
+								<i class="fa fa-newspaper-o"></i>
+								Casas novas para os moradores de áreas de risco na br 381
+							</a>
+						</li>
+	                </ul>
+				</div>
+			</div>
 		</div>
-    </div>
+	</div>
 </section>

@@ -13,13 +13,13 @@ declare var $: any;
 })
 export class HighlightsNewsComponent implements OnInit {
 
-	public news: Array<News>
+	public news: Array<News>;
 	public basePathImage = BASE_URL;
 
 	constructor(private newsService: NewsService) { }
 
 	ngOnInit() {
-		this.newsService.lastSix()
+		this.newsService.lastThree()
 			.then((response) => {
 				this.news = response;
 				try {

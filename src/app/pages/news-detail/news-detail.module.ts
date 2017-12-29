@@ -10,7 +10,7 @@ import { NewsService } from '../../services/news.service';
 	imports: [
 		CommonModule,
 		RouterModule.forChild(ROUTES),
-		PipesModule		
+		PipesModule
 	],
 	declarations: [
 		NewsDetailComponent
