@@ -13,14 +13,23 @@ export class NewsComponent implements OnInit {
 
 	public news: Array<News>;
 	constructor(
-		private newsService: NewsService
+		private newsService: NewsService,
+		private activatedRoute: ActivatedRoute
 	) { }
 
 	ngOnInit() {
-		this.newsService.getAll()
+		const category_id = this.activatedRoute.snapshot.params['id'];
+		if (category_id === undefined) {
+			this.newsService.getAll()
 			.then((response) => {
 				this.news = response;
 			});
+		} else {
+			this.newsService.getByCategoryId(category_id)
+				.then((response) => {
+					this.news = response;
+				});
+		}
 	}
 
 }

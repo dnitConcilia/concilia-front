@@ -18,6 +18,7 @@ export const ROUTES: Routes = [
 	{path: 'contato', loadChildren: './pages/contact/contact.module#ContactModule'},
 	{path: 'imoveis', loadChildren: './pages/properties/properties.module#PropertiesModule'},
 	{path: 'imoveis-documentacao', loadChildren: './pages/documents/documents.module#DocumentsModule'},
+	{path: 'noticias-categoria/:id', loadChildren: './pages/news/news.module#NewsModule'},
 	{path: 'noticias', loadChildren: './pages/news/news.module#NewsModule'},
 	{path: 'noticias/:slug', loadChildren: './pages/news-detail/news-detail.module#NewsDetailModule'},
 	{path: 'comunidades/:slug', loadChildren: './pages/community-detail/community-detail.module#CommunityDetailModule'},
