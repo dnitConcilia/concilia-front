@@ -42,6 +42,13 @@ export class NewsService implements DaoInterface<News> {
 				.then(response => response.json() as News)
 				.catch(this.handleError);
 	}
+	getByCategoryId(id: number): Promise<Array<News>> {
+		const url = API_URL + 'news/category/' + id + '/';
+		return this.http.get(url, this.options)
+				.toPromise()
+				.then(response => response.json() as Array<News>)
+				.catch(this.handleError);
+	}
 	getBySlug(slug: number): Promise<News> {
 		const url = API_URL + 'news-slug/' + slug + '/';
 		return this.http.get(url, this.options)
