@@ -33,7 +33,7 @@ export class CounterUpComponent implements OnInit {
 			num: 34,
 			text: 'Casos conciliados em mutirões',
 			image: 'assets/images/magenta2.png',
-			info: 'Banco de imóveis'
+			info: 'Termo de acordo'
 		},
 		{
 			num: 23,
