@@ -43,13 +43,14 @@
 					</div>
 					<ul class='category-list' style="margin-left: 20px;font-size: large;">
 						<li><a class="font-444" [routerLink]="['/noticias']">Todas</a></li>
-						<li><a class="font-444" href="">Processo</a></li>
-						<li><a class="font-444" href="">Imóveis</a></li>
-						<li><a class="font-444" href="">Conselho Executivo</a></li>
-						<li><a class="font-444" href="">Outros</a></li>
+						<li><a class="font-444" [routerLink]="['/noticias-categoria', '1']">Processo</a></li>
+						<li><a class="font-444" [routerLink]="['/noticias-categoria', '2']">Imóveis</a></li>
+						<li><a class="font-444" [routerLink]="['/noticias-categoria', '3']">Comunidades</a></li>
+						<li><a class="font-444" [routerLink]="['/noticias-categoria', '4']">Conselho Executivo</a></li>
+						<li><a class="font-444" [routerLink]="['/noticias-categoria', '5']">Outros</a></li>
 					</ul>
 				</div><br /><br /><br />
-				<div class="row">
+				<!-- <div class="row">
 					<div class="head_title" style="margin-left:15px;margin-bottom:0px;">
 						<h3 style="font-size: x-large;">Mais acessadas</h3>
 						<div class="separator" style="width: 200px;"></div>
@@ -85,7 +86,7 @@
 							</a>
 						</li>
 	                </ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>

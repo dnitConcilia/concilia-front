@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { News } from '../pages/news/news';
-import { API_URL } from '../config';
+import { API_URL, BASE_URL } from '../config';
 import { DaoInterface } from '../../interface/dao-interface';
 import { ResponseResult } from '../../interface/response-result';
 
@@ -46,7 +46,14 @@ export class NewsService implements DaoInterface<News> {
 		const url = API_URL + 'news/category/' + id + '/';
 		return this.http.get(url, this.options)
 				.toPromise()
-				.then(response => response.json() as Array<News>)
+				.then(response => {
+					const resp = response.json() as Array<News>;
+
+					for (let i = 0; i < resp.length; i++) {
+						resp[i].image = BASE_URL + resp[i].image;
+					}
+					return resp;
+				})
 				.catch(this.handleError);
 	}
 	getBySlug(slug: number): Promise<News> {
