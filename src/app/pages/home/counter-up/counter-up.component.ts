@@ -12,14 +12,14 @@ export class CounterUpComponent implements OnInit {
 
 	public counters: Array<CounterInterface> = [
 		{
-			num: 96,
+			num: 91,
 			text: 'Famílias no aluguel social',
 			image: 'assets/images/amarelo2.png',
 			info: 'Termo de acordo'
 		},
 		{
 			num: 1354,
-			text: 'Moradias seladas',
+			text: 'Moradias que foram seladas',
 			image: 'assets/images/azul2.png',
 			info: 'Termo de acordo'
 		},
@@ -30,13 +30,13 @@ export class CounterUpComponent implements OnInit {
 		// 	info: 'Banco de imóveis'
 		// },
 		{
-			num: 34,
+			num: 41,
 			text: 'Casos conciliados em mutirões',
 			image: 'assets/images/magenta2.png',
 			info: 'Termo de acordo'
 		},
 		{
-			num: 23,
+			num: 30,
 			text: 'Mudanças concluídas',
 			image: 'assets/images/verde2.png',
 			info: 'Balanço final'

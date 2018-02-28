@@ -1546,6 +1546,11 @@ button.btn-md:hover {
     border:1px solid #ff7200;
 }
 
+.footer-image-apoio {
+	display: inline-block;
+	width: 300px;
+}
+
 .copyright_text{
     text-align: left;
 }

@@ -16,6 +16,7 @@
 }
 .photo, .video {
 	border: 2.5px solid #fff;
+	height: 300px;
 }
 
 .gallery {
