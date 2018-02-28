@@ -1,0 +1,19 @@
+.font-124 {
+	font-size: 1.24rem;
+}
+.separator {
+	height: 1px;
+	width: 300px;
+	margin: 20px 0px;
+	background: #444;
+	position: relative;
+}
+.separator:after {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 2px;
+	width: 100px;
+	background: #ff7200;
+	content: "";
+}

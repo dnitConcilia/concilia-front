@@ -7,6 +7,7 @@ export const ROUTES: Routes = [
 	{path: 'conselho-executivo', loadChildren: './pages/executive-council/executive-council.module#ExecutiveCouncilModule'},
 	{path: 'identidade-visual', loadChildren: './pages/visual-identity/visual-identity.module#VisualIdentityModule'},
 	{path: 'acao-publica', loadChildren: './pages/civil-action/civil-action.module#CivilActionModule'},
+	{path: 'pos-morar', loadChildren: './pages/after-living/after-living.module#AfterLivingModule'},
 	{path: 'acervo', loadChildren: './pages/medias/medias.module#MediasModule'},
 	{path: 'acervo/:slug', loadChildren: './pages/gallery-detail/gallery-detail.module#GalleryDetailModule'},
 	{path: 'plano-providencias', loadChildren: './pages/action-plan/action-plan.module#ActionPlanModule'},
