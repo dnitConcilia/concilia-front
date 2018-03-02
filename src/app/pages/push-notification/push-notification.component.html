@@ -1,0 +1,66 @@
+<section id="home" class="home">
+    <div class="overlay overlay-min">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 ">
+					<h1 style="text-align: -webkit-center;">
+						<img src="assets/images/logoconcilia.png" alt="Logo do concilia" style="max-width:60%;margin-top: 150px;">
+					</h1>
+	            </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="contact" style="background-color: #fff">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="contact_contant sections" style="padding-bottom: 50px;">
+                        <div class="col-sm-12">
+                            <div class="head_title" style="margin-bottom: 50px;">
+                                <h3 class="font2-3">ENVIAR NOTIFICAÇÃO NOS NAVEGADORES</h3>
+                                <div class="separator"></div>
+                            </div>
+                            <div class="single_contant_left">
+                                <form id="id-pushNotificationForm" (ngSubmit)="onSubmit(pushNotificationForm)" #pushNotificationForm="ngForm">
+                                    <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+									<div class="row">
+										<!-- <div class="alert alert-info" role="alert" [hidden]="pushNotificationForm.form.valid">
+											Preencha todos os campos
+										</div> -->
+										<div class="alert alert-success" role="alert" [hidden]="!success">
+											Mensagem enviada com sucesso!
+										</div>
+										<div class="alert alert-error" role="alert" [hidden]="!error">
+											O token enviado está errado!
+										</div>
+									</div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div [ngClass]="getFormGroupClass(body.valid, body.pristine)">
+												<label for="body" class="form-control-label">Menagem:</label>
+                                                <input type="text" [ngClass]="getFormControlClass(body.valid, body.pristine)" name="body" placeholder="Primeiro nome" required [(ngModel)]="notification.body" #body="ngModel" style="border-width:2px;">
+                                            </div>
+                                            <div [ngClass]="getFormGroupClass(token.valid, token.pristine)">
+                                                <label for="token" class="form-control-label">Token de envio:</label>
+                                                <input type="password" [ngClass]="getFormControlClass(token.valid, token.pristine)" name="token" placeholder="Primeiro nome" required
+                                                    [(ngModel)]="notification.token" #token="ngModel" style="border-width:2px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="">
+                                        <input type="submit" value="Enviar" class="btn btn-primary" [disabled]="!pushNotificationForm.form.valid">
+                                    </div>
+									<span>* Preencha todos os campos</span>
+                                    <!--</div>-->
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</section>  <!-- End of contact section -->

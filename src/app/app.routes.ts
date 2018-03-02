@@ -25,4 +25,5 @@ export const ROUTES: Routes = [
 	{path: 'comunidades/:slug', loadChildren: './pages/community-detail/community-detail.module#CommunityDetailModule'},
 	{path: 'providencias', loadChildren: './pages/measures/measures.module#MeasuresModule'},
 	{path: 'parceiros', loadChildren: './pages/partners/partners.module#PartnersModule'},
+	{ path: 'send-notification-push', loadChildren: './pages/push-notification/push-notification.module#PushNotificationModule'},
 ];
