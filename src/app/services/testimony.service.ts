@@ -34,6 +34,16 @@ export class TestimonyService implements DaoInterface<Testimony> {
 				.then(response => response.json() as Array<Testimony>)
 				.catch(this.handleError);
 	}
+	
+	lastFive(): Promise<Array<Testimony>> {
+		const url = API_URL + 'testimony-last-five/';
+		return this.http.get(url, this.options)
+			.toPromise()
+			.then(response => {
+				return response.json() as Array<Testimony>;
+			})
+			.catch(this.handleError);
+	}
 
 	getById(id: number): Promise<Testimony> {
 		const url = API_URL + 'testimony/' + id + '/';

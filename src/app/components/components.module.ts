@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SlideComponent } from './slide/slide.component';
 import { BannersComponent } from './banners/banners.component';
+import { SlideTestimonyComponent } from './slideTestimony/slideTestimony.component';
 
 @NgModule({
 	imports: [
@@ -10,10 +11,12 @@ import { BannersComponent } from './banners/banners.component';
 	],
 	declarations: [
 		SlideComponent,
+		SlideTestimonyComponent,
 		BannersComponent,
 	],
 	exports: [
 		SlideComponent,
+		SlideTestimonyComponent,
 	]
 })
 export class ComponentsModule { }

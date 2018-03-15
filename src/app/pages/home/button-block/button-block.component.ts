@@ -18,4 +18,8 @@ export class ButtonBlockComponent {
 	public goToMedia() {
 		this.router.navigate(['/acervo']);
 	}
+
+	public goToTestimony() {
+		this.router.navigate(['/depoimentos']);
+	}
 }

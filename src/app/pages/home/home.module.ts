@@ -14,6 +14,8 @@ import { ROUTES } from './home.routes';
 import { NewsService } from '../../services/news.service';
 import { TimelineService } from '../../services/timeline.service';
 import { PipesModule } from '../../pipes/pipes.module';
+import { TestimonyComponent } from './testimony/testimony.component';
+import { TestimonyService } from '../../services/testimony.service';
 
 @NgModule({
 	declarations: [
@@ -23,7 +25,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 		TimelineComponent,
 		BannerHomeComponent,
 		HighlightsNewsComponent,
-		ButtonBlockComponent
+		ButtonBlockComponent,
+		TestimonyComponent
 	],
 	imports: [
 		CommonModule,
@@ -39,7 +42,8 @@ import { PipesModule } from '../../pipes/pipes.module';
 	],
 	providers: [
 		NewsService,
-		TimelineService
+		TimelineService,
+		TestimonyService
 	]
 })
 export class HomeModule { }

@@ -1,20 +1,22 @@
-<section id="portfolio" class="portfolio lightbg" style="padding-top:100px;padding-bottom:50px">
+<section id="portfolio" style="padding-top:50px;padding-bottom:0px;background-color: #ffd69c">
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
-                <div class="head_title" style="margin-left: 15px;">
+                <div class="head_title" style="margin-left: 15px;margin-bottom: 40px;">
                     <h3 class="font-3rem">Depoimentos</h3>
                     <div class="separator"></div>
                 </div>
             </div>
         </div>
-        <div class="row" style="margin-bottom: 50px;">
-            <div *ngFor="let item of testimonys" class="col-sm-12 col-md-6 col-lg-4">
-                {{item.name}} <br />
-                {{item.testimony}} <br />
-                {{item.explace}} <br />
-                {{item.place}}
-            </div>
-        </div>
     </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <cba-slide-testimony></cba-slide-testimony>
+           </div>
+        </div>
+    </div><br>
+    <br>
+    <br>
+    <!--<cba-button-block btnIcon="testimony"></cba-button-block>-->
 </section>
