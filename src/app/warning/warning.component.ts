@@ -23,7 +23,6 @@ export class WarningComponent implements OnInit {
 	ngOnInit() {
 		this.warning.getAll()
 			.then((response) => {
-				console.log(response);
 				this.alert = response[0];
 				if (this.alert) {
 					setTimeout(function() {

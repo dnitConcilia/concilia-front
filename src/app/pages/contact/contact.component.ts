@@ -29,7 +29,6 @@ export class ContactComponent implements OnInit {
 	}
 
 	public onSubmit(form: NgForm): void {
-		console.log(this.contact);
 		this.contactService.create(this.contact)
 			.then((response) => {
 				this.success = true;

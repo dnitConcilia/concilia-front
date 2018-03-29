@@ -20,10 +20,8 @@ export class PushNotificationComponent implements OnInit {
 	}
 
 	public onSubmit(form: NgForm): void {
-		console.log(this.notification);
 		const token = this.notification.token;
 		delete this.notification['token'];
-		console.log(token);
 		if (token === 'Dnit@123Root') {
 			Push.create('Concilia BR-381', this.notification);
 		} else {

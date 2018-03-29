@@ -17,7 +17,6 @@ export class SlideTestimonyComponent implements OnInit {
 		this.testimonyService.lastFive()
 			.then((response) => {
 				this.testimonys = response;
-				console.log(this.testimonys);
 			})
 			.catch(err => console.log(err));
 	}

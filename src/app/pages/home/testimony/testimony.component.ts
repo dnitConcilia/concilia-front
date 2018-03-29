@@ -21,7 +21,6 @@ export class TestimonyComponent implements OnInit {
 		this.testimonyService.lastFive()
 			.then((response) => {
 				this.testimonys = response;
-				console.log(response);
 			})
 			.catch(err => console.log(err));
 	}
