@@ -38,6 +38,7 @@
 									<li routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="dropdown">
 										<a class="dropbtn" style="cursor:pointer;">Comunidades</a>
 										<ul class="dropdown-content ul-submenu" style="right: auto;">
+                                            <li><a [routerLink]="['/depoimentos']">Depoimentos</a></li>
 											<li><a [routerLink]="['/comunidades']">Comunidades</a></li>
 											<li *ngFor="let item of communities"><a [routerLink]="['/comunidades/' + item.slug]">{{item.title}}</a></li>
 											<li><a [routerLink]="['/cmar']">CMAR</a></li>

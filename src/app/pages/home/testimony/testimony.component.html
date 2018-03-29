@@ -12,11 +12,44 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-12">
-                <cba-slide-testimony></cba-slide-testimony>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                
+                        <div class="item" *ngFor="let item of testimonys; let isFirst = first" [class.active]="isFirst">
+                            <figure class="snip1197">
+                                <img src="{{basePathImage}}{{item.image}}" alt="" />
+                                <figcaption>
+                                    <blockquote>{{item.testimony}}</blockquote>
+                                    <div class="arrow"></div>
+                                </figcaption>
+                                <div class="author">
+                                    <h5>{{item.name}}
+                                        <br>
+                                        <span>- {{item.exPlace}}</span>
+                                        <br>
+                                        <span>- {{item.exPlace}}</span>
+                                    </h5>
+                                </div>
+                            </figure>
+                        </div>
+                
+                        <!-- Left and right controls -->
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
            </div>
         </div>
     </div><br>
     <br>
     <br>
-    <!--<cba-button-block btnIcon="testimony"></cba-button-block>-->
+    <cba-button-block btnIcon="testimony"></cba-button-block>
 </section>

@@ -12,4 +12,4 @@ import { TestimonyPageComponent } from './testimony.component';
 	],
 	declarations: [TestimonyPageComponent]
 })
-export class AfterLivingModule { }
+export class TestimonyModule { }

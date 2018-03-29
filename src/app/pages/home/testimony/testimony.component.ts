@@ -11,8 +11,18 @@ declare var $: any;
 	templateUrl: './testimony.component.html',
 	styleUrls: ['./testimony.component.css']
 })
-export class TestimonyComponent {
-	constructor() {
-	}
+export class TestimonyComponent implements OnInit {
+	public testimonys: Array<Testimony>;
+	public basePathImage = BASE_URL;
 
+	constructor(private testimonyService: TestimonyService) {}
+
+	ngOnInit() {
+		this.testimonyService.lastFive()
+			.then((response) => {
+				this.testimonys = response;
+				console.log(response);
+			})
+			.catch(err => console.log(err));
+	}
 }
