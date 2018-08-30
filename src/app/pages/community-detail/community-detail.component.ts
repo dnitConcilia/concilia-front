@@ -28,6 +28,7 @@ export class CommunityDetailComponent implements OnInit {
 			if (val instanceof NavigationEnd) {
 				this.communityService.getBySlug(this.activatedRoute.snapshot.params['slug'])
 					.then((response) => {
+						console.log(response);
 						response.image = this.apiUrl + response.image;
 						this.community = response;
 						$('.popup-gallery').magnificPopup({
