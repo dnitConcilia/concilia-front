@@ -22,7 +22,6 @@ export class TestimonyPageComponent implements OnInit {
 		this.testimonyService.getAll()
 			.then((response) => {
 				this.testimonys = response;
-				console.log(response);
 			})
 			.catch(err => console.log(err));
 	}
