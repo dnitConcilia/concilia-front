@@ -21,10 +21,10 @@
 	</div>
 	<div class="row">
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+		<div id="myCarouselTimeline" class="carousel slide timeline_carousel" data-ride="carousel" data-interval="false">
 		  <!-- Indicators -->
 		  <ol class="carousel-indicators">
-		    <li *ngFor="let i of n_events" data-target="#myCarousel" [attr.data-slide-to]="i"  [ngClass]="{'active': i == 0}"></li>
+		    <li *ngFor="let i of n_events" data-target="#myCarouselTimeline" [attr.data-slide-to]="i" [ngClass]="{'active': i == 0}"></li>
 		  </ol>
 
 			<!-- Wrapper for slides -->
@@ -80,10 +80,10 @@
 			</div>
 
 			<!-- Controls -->
-			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<a class="left carousel-control" href="#myCarouselTimeline" role="button" data-slide="prev">
 				<i class="fa fa-angle-left fa-3x left-icon" aria-hidden="true"></i>
 			</a>
-			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<a class="right carousel-control" href="#myCarouselTimeline" role="button" data-slide="next">
 				<i class="fa fa-angle-right fa-3x right-icon" aria-hidden="true" style="left: 15%"></i>
 			</a>
 		</div>

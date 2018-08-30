@@ -1,11 +1,16 @@
 .font-124 {
-	font-size: 1.24rem;
+	font-size: 1.24rem !important;
+	color: #000 !important;
 }
 p {
 	font-size: 1.24rem !important;
+	color: #000 !important;
 }
 .font2-3 {
 	font-size: 2.3rem!important;
+}
+h3 {
+	color: #000 !important;
 }
 .separator {
 	height: 1px;
